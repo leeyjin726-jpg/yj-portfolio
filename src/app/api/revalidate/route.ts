@@ -21,34 +21,34 @@ export async function POST(request: NextRequest) {
 
   switch (type) {
     case "blogPost":
-      revalidateTag("blog");
+      revalidateTag("blog", "max");
       break;
     case "portfolioItem":
-      revalidateTag("portfolio");
+      revalidateTag("portfolio", "max");
       break;
     case "product":
-      revalidateTag("products");
+      revalidateTag("products", "max");
       break;
     case "siteSettings":
-      revalidateTag("settings");
+      revalidateTag("settings", "max");
       break;
     case "aboutPage":
-      revalidateTag("about");
+      revalidateTag("about", "max");
       break;
     case "contactPage":
-      revalidateTag("contact");
+      revalidateTag("contact", "max");
       break;
     case "magazine":
-      revalidateTag("magazine");
+      revalidateTag("magazine", "max");
       break;
     default:
-      revalidateTag("blog");
-      revalidateTag("portfolio");
-      revalidateTag("products");
-      revalidateTag("settings");
-      revalidateTag("about");
-      revalidateTag("contact");
-      revalidateTag("magazine");
+      revalidateTag("blog", "max");
+      revalidateTag("portfolio", "max");
+      revalidateTag("products", "max");
+      revalidateTag("settings", "max");
+      revalidateTag("about", "max");
+      revalidateTag("contact", "max");
+      revalidateTag("magazine", "max");
   }
 
   return NextResponse.json({ revalidated: true, type });

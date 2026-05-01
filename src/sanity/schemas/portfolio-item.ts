@@ -260,11 +260,12 @@ export const portfolioItem = defineType({
       media: "coverImage",
       order: "displayOrder",
     },
-    prepare({ title, subtitle, media, order }: { title?: string; subtitle?: string; media?: unknown; order?: number }) {
+    prepare(value) {
+      const { title, subtitle, media, order } = value as { title?: string; subtitle?: string; media?: unknown; order?: number };
       return {
         title: order ? `[${order}] ${title ?? "Untitled"}` : (title ?? "Untitled"),
         subtitle,
-        media,
+        media: media as never,
       };
     },
   },
