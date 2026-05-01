@@ -1,0 +1,62 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "work": "Work",
+    "design": "Design",
+    "content": "Content",
+    "blog": "Blog",
+    "shop": "Shop",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero_title": "Designer & Content Creator",
+    "hero_subtitle": "Building brands and telling stories",
+    "cta": "Let's work together",
+    "featured_work": "Featured Work",
+    "latest_posts": "Latest Posts"
+  },
+  "about": {
+    "title": "About"
+  },
+  "work": {
+    "title": "Work",
+    "design_title": "Design",
+    "content_title": "Content"
+  },
+  "blog": {
+    "title": "Blog",
+    "read_more": "Read more"
+  },
+  "shop": {
+    "title": "Shop",
+    "buy": "Buy now",
+    "coming_soon": "Coming soon"
+  },
+  "contact": {
+    "title": "Contact",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "type": "Inquiry type",
+    "type_commission": "Commission",
+    "type_job": "Job offer",
+    "type_other": "Other",
+    "send": "Send",
+    "sending": "Sending...",
+    "success": "Message sent successfully.",
+    "error": "Failed to send. Please try again.",
+    "honeypot": "Leave this field empty"
+  },
+  "common": {
+    "read_more": "Read more",
+    "view_project": "View project",
+    "back": "Back",
+    "all": "All",
+    "loading": "Loading...",
+    "error": "An error occurred"
+  },
+  "footer": {
+    "rights": "All rights reserved"
+  }
+}

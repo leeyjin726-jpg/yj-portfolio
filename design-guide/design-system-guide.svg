@@ -1,0 +1,113 @@
+<svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ds-title ds-desc">
+<title id="ds-title">ldj portfolio design system guide · 16:9</title>
+<desc id="ds-desc">디자인 시스템 전체 레퍼런스 시트. 컬러 팔레트, 타이포그래피 스케일, 컴포넌트, 레이아웃 패턴을 한 화면에 정리한 가이드.</desc>
+<rect width="1280" height="720" fill="#0A0A0A"/>
+
+<text x="40" y="50" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="500" fill="#FFFFFF">ldj portfolio<tspan fill="#00CC6D">.</tspan></text>
+<text x="640" y="50" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="22" letter-spacing="4" fill="#A1A1A1">DESIGN SYSTEM · v1.2</text>
+<text x="1240" y="50" text-anchor="end" font-family="Inter, system-ui, sans-serif" font-size="22" letter-spacing="2" fill="#A1A1A1">2025.04</text>
+<line x1="40" y1="75" x2="1240" y2="75" stroke="#262626" stroke-width="1"/>
+
+<text x="40" y="115" font-family="Inter, system-ui, sans-serif" font-size="22" letter-spacing="3" fill="#666666">01 · PALETTE</text>
+
+<rect x="40" y="135" width="120" height="60" fill="#0A0A0A" stroke="#262626" stroke-width="1"/>
+<text x="40" y="215" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="500" fill="#FFFFFF">#0A0A0A</text>
+<text x="40" y="238" font-family="Inter, system-ui, sans-serif" font-size="22" fill="#666666">bg</text>
+
+<rect x="180" y="135" width="120" height="60" fill="#141414" stroke="#262626" stroke-width="1"/>
+<text x="180" y="215" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="500" fill="#FFFFFF">#141414</text>
+<text x="180" y="238" font-family="Inter, system-ui, sans-serif" font-size="22" fill="#666666">surface</text>
+
+<rect x="320" y="135" width="120" height="60" fill="#1F1F1F"/>
+<text x="320" y="215" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="500" fill="#FFFFFF">#1F1F1F</text>
+<text x="320" y="238" font-family="Inter, system-ui, sans-serif" font-size="22" fill="#666666">elevated</text>
+
+<rect x="460" y="135" width="120" height="60" fill="#262626"/>
+<text x="460" y="215" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="500" fill="#FFFFFF">#262626</text>
+<text x="460" y="238" font-family="Inter, system-ui, sans-serif" font-size="22" fill="#666666">border</text>
+
+<rect x="600" y="135" width="120" height="60" fill="#FFFFFF"/>
+<text x="600" y="215" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="500" fill="#FFFFFF">#FFFFFF</text>
+<text x="600" y="238" font-family="Inter, system-ui, sans-serif" font-size="22" fill="#666666">primary</text>
+
+<rect x="740" y="135" width="120" height="60" fill="#A1A1A1"/>
+<text x="740" y="215" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="500" fill="#FFFFFF">#A1A1A1</text>
+<text x="740" y="238" font-family="Inter, system-ui, sans-serif" font-size="22" fill="#666666">secondary</text>
+
+<rect x="880" y="135" width="120" height="60" fill="#666666"/>
+<text x="880" y="215" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="500" fill="#FFFFFF">#666666</text>
+<text x="880" y="238" font-family="Inter, system-ui, sans-serif" font-size="22" fill="#666666">tertiary</text>
+
+<rect x="1020" y="135" width="120" height="60" fill="#00CC6D"/>
+<text x="1020" y="215" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="500" fill="#00CC6D">#00CC6D</text>
+<text x="1020" y="238" font-family="Inter, system-ui, sans-serif" font-size="22" fill="#00CC6D">accent · muted</text>
+
+<line x1="40" y1="270" x2="1240" y2="270" stroke="#262626" stroke-width="1.5" stroke-dasharray="2,4"/>
+
+<text x="40" y="305" font-family="Inter, system-ui, sans-serif" font-size="22" letter-spacing="3" fill="#666666">02 · TYPE SCALE</text>
+
+<text x="40" y="370" font-family="Inter, system-ui, sans-serif" font-size="72" font-weight="700" letter-spacing="-2" fill="#FFFFFF">Aa</text>
+<text x="170" y="340" font-family="Inter, system-ui, sans-serif" font-size="22" letter-spacing="2" fill="#A1A1A1">DISPLAY</text>
+<text x="170" y="368" font-family="Inter, system-ui, sans-serif" font-size="22" fill="#666666">72px · Space Grotesk 700</text>
+
+<text x="40" y="420" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="500" letter-spacing="3" fill="#FFFFFF">SECTION LABEL</text>
+<text x="310" y="420" font-family="Inter, system-ui, sans-serif" font-size="22" fill="#666666">· H1 · 14px caps +0.15em</text>
+
+<text x="40" y="455" font-family="system-ui, sans-serif" font-size="22" fill="#FFFFFF">본문 텍스트 · Body copy</text>
+<text x="310" y="455" font-family="Inter, system-ui, sans-serif" font-size="22" fill="#666666">· 15px · Pretendard</text>
+
+<text x="660" y="305" font-family="Inter, system-ui, sans-serif" font-size="22" letter-spacing="3" fill="#666666">03 · COMPONENTS</text>
+
+<rect x="660" y="325" width="180" height="42" rx="21" fill="#1F1F1F"/>
+<text x="750" y="353" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" fill="#A1A1A1"># 고립된 창작</text>
+<text x="860" y="353" font-family="Inter, system-ui, sans-serif" font-size="22" fill="#666666">Pill tag</text>
+
+<circle cx="680" cy="400" r="20" fill="none" stroke="#00CC6D" stroke-width="2"/>
+<text x="680" y="408" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="22" fill="#00CC6D">01</text>
+<circle cx="735" cy="400" r="20" fill="#00CC6D"/>
+<text x="735" y="408" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="500" fill="#0A0A0A">03</text>
+<text x="775" y="407" font-family="Inter, system-ui, sans-serif" font-size="22" fill="#666666">Number · rest / active</text>
+
+<line x1="660" y1="445" x2="750" y2="445" stroke="#262626" stroke-width="1"/>
+<line x1="760" y1="438" x2="760" y2="452" stroke="#FFFFFF" stroke-width="1.5"/>
+<circle cx="780" cy="445" r="3" fill="#00CC6D"/>
+<line x1="793" y1="445" x2="850" y2="445" stroke="#262626" stroke-width="1"/>
+<text x="865" y="452" font-family="Inter, system-ui, sans-serif" font-size="22" fill="#666666">Divider marker</text>
+
+<line x1="40" y1="490" x2="1240" y2="490" stroke="#262626" stroke-width="1.5" stroke-dasharray="2,4"/>
+
+<text x="40" y="525" font-family="Inter, system-ui, sans-serif" font-size="22" letter-spacing="3" fill="#666666">04 · LAYOUT PATTERNS</text>
+
+<rect x="40" y="545" width="280" height="100" fill="#141414" rx="2"/>
+<rect x="55" y="560" width="75" height="60" fill="#1F1F1F" rx="1"/>
+<rect x="140" y="560" width="75" height="60" fill="#1F1F1F" rx="1"/>
+<rect x="225" y="560" width="80" height="60" fill="#1F1F1F" rx="1" stroke="#00CC6D" stroke-width="1"/>
+<line x1="55" y1="635" x2="100" y2="635" stroke="#666666" stroke-width="1"/>
+<line x1="140" y1="635" x2="185" y2="635" stroke="#666666" stroke-width="1"/>
+<line x1="225" y1="635" x2="290" y2="635" stroke="#00CC6D" stroke-width="1"/>
+<text x="40" y="675" font-family="Inter, system-ui, sans-serif" font-size="22" letter-spacing="2" fill="#A1A1A1">INDEX · 3-col grid</text>
+
+<rect x="340" y="545" width="280" height="100" fill="#141414" rx="2"/>
+<rect x="355" y="565" width="70" height="8" fill="#FFFFFF" rx="1"/>
+<line x1="445" y1="568" x2="605" y2="568" stroke="#555555" stroke-width="2"/>
+<line x1="445" y1="585" x2="600" y2="585" stroke="#333333" stroke-width="1"/>
+<line x1="445" y1="600" x2="570" y2="600" stroke="#333333" stroke-width="1"/>
+<rect x="445" y="615" width="55" height="18" rx="9" fill="#1F1F1F"/>
+<rect x="510" y="615" width="55" height="18" rx="9" fill="#1F1F1F"/>
+<rect x="575" y="615" width="30" height="18" rx="9" fill="#1F1F1F"/>
+<text x="340" y="675" font-family="Inter, system-ui, sans-serif" font-size="22" letter-spacing="2" fill="#A1A1A1">CASE STUDY · 2-col</text>
+
+<rect x="640" y="545" width="280" height="100" fill="#141414" rx="2"/>
+<rect x="655" y="560" width="250" height="50" fill="#1F1F1F" rx="1"/>
+<rect x="745" y="570" width="70" height="30" fill="#2A2A2A" rx="1"/>
+<line x1="655" y1="622" x2="755" y2="622" stroke="#262626" stroke-width="1"/>
+<line x1="762" y1="615" x2="762" y2="629" stroke="#FFFFFF" stroke-width="1.5"/>
+<circle cx="780" cy="622" r="2.5" fill="#00CC6D"/>
+<line x1="793" y1="622" x2="905" y2="622" stroke="#262626" stroke-width="1"/>
+<rect x="655" y="632" width="80" height="8" fill="#FFFFFF" rx="1"/>
+<text x="640" y="675" font-family="Inter, system-ui, sans-serif" font-size="22" letter-spacing="2" fill="#A1A1A1">HERO · full-width</text>
+
+<line x1="40" y1="693" x2="1240" y2="693" stroke="#262626" stroke-width="1"/>
+<text x="40" y="713" font-family="Inter, system-ui, sans-serif" font-size="22" letter-spacing="2" fill="#666666">PREPARED FOR WARP / CLAUDE CODE</text>
+<text x="1240" y="713" text-anchor="end" font-family="Inter, system-ui, sans-serif" font-size="22" letter-spacing="2" fill="#666666">ldj@workscombine · 2025</text>
+</svg>

@@ -1,0 +1,62 @@
+{
+  "nav": {
+    "home": "홈",
+    "about": "소개",
+    "work": "작업",
+    "design": "디자인",
+    "content": "콘텐츠",
+    "blog": "블로그",
+    "shop": "샵",
+    "contact": "연락"
+  },
+  "home": {
+    "hero_title": "디자이너 & 콘텐츠 크리에이터",
+    "hero_subtitle": "브랜드를 만들고 이야기를 전합니다",
+    "cta": "함께 일해요",
+    "featured_work": "주요 작업",
+    "latest_posts": "최근 글"
+  },
+  "about": {
+    "title": "소개"
+  },
+  "work": {
+    "title": "작업",
+    "design_title": "디자인",
+    "content_title": "콘텐츠"
+  },
+  "blog": {
+    "title": "블로그",
+    "read_more": "더 읽기"
+  },
+  "shop": {
+    "title": "샵",
+    "buy": "구매하기",
+    "coming_soon": "준비 중입니다"
+  },
+  "contact": {
+    "title": "연락하기",
+    "name": "이름",
+    "email": "이메일",
+    "message": "메시지",
+    "type": "문의 유형",
+    "type_commission": "의뢰",
+    "type_job": "채용 제안",
+    "type_other": "기타",
+    "send": "보내기",
+    "sending": "전송 중...",
+    "success": "메시지가 전송되었습니다.",
+    "error": "전송에 실패했습니다. 다시 시도해주세요.",
+    "honeypot": "이 필드는 비워두세요"
+  },
+  "common": {
+    "read_more": "더 보기",
+    "view_project": "프로젝트 보기",
+    "back": "뒤로",
+    "all": "전체",
+    "loading": "로딩 중...",
+    "error": "오류가 발생했습니다"
+  },
+  "footer": {
+    "rights": "All rights reserved"
+  }
+}

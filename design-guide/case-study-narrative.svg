@@ -1,0 +1,81 @@
+<svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d">
+<title id="t">케이스 스터디 내러티브 구조</title>
+<desc id="d">Pattern B의 고정 5단계 섹션 구성: 문제 · 가설 · 솔루션 · 성과 · 배운 점</desc>
+<rect width="1280" height="720" fill="#0A0A0A"/>
+
+<text x="40" y="45" font-family="Inter, system-ui, sans-serif" font-size="22" letter-spacing="3" fill="#666666">CASE STUDY NARRATIVE · FIXED 5-STEP</text>
+<text x="1240" y="45" text-anchor="end" font-family="Inter, system-ui, sans-serif" font-size="22" letter-spacing="2" fill="#666666">Pattern B · v1.2</text>
+<line x1="40" y1="70" x2="1240" y2="70" stroke="#262626" stroke-width="1"/>
+
+<rect x="40" y="115" width="216" height="440" fill="#141414" rx="2"/>
+<text x="56" y="175" font-family="Inter, system-ui, sans-serif" font-size="56" font-weight="700" letter-spacing="-2" fill="#666666">01</text>
+<text x="56" y="230" font-family="system-ui, sans-serif" font-size="32" font-weight="500" fill="#FFFFFF">문제</text>
+<text x="56" y="262" font-family="Inter, system-ui, sans-serif" font-size="22" letter-spacing="3" fill="#A1A1A1">PROBLEM</text>
+<line x1="56" y1="288" x2="240" y2="288" stroke="#262626" stroke-width="1"/>
+<text x="56" y="325" font-family="system-ui, sans-serif" font-size="22" fill="#FFFFFF">무엇이 막혀</text>
+<text x="56" y="352" font-family="system-ui, sans-serif" font-size="22" fill="#FFFFFF">있었나?</text>
+<text x="56" y="415" font-family="Inter, system-ui, sans-serif" font-size="22" letter-spacing="3" fill="#666666">CONTENT</text>
+<text x="56" y="448" font-family="system-ui, sans-serif" font-size="22" fill="#A1A1A1">배경</text>
+<text x="56" y="480" font-family="system-ui, sans-serif" font-size="22" fill="#A1A1A1">페인 포인트</text>
+<text x="56" y="512" font-family="system-ui, sans-serif" font-size="22" fill="#A1A1A1">현재 상황</text>
+
+<text x="271" y="345" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="32" fill="#444444">→</text>
+
+<rect x="286" y="115" width="216" height="440" fill="#141414" rx="2"/>
+<text x="302" y="175" font-family="Inter, system-ui, sans-serif" font-size="56" font-weight="700" letter-spacing="-2" fill="#666666">02</text>
+<text x="302" y="230" font-family="system-ui, sans-serif" font-size="32" font-weight="500" fill="#FFFFFF">가설</text>
+<text x="302" y="262" font-family="Inter, system-ui, sans-serif" font-size="22" letter-spacing="3" fill="#A1A1A1">HYPOTHESIS</text>
+<line x1="302" y1="288" x2="486" y2="288" stroke="#262626" stroke-width="1"/>
+<text x="302" y="325" font-family="system-ui, sans-serif" font-size="22" fill="#FFFFFF">어떻게 풀 수</text>
+<text x="302" y="352" font-family="system-ui, sans-serif" font-size="22" fill="#FFFFFF">있을까?</text>
+<text x="302" y="415" font-family="Inter, system-ui, sans-serif" font-size="22" letter-spacing="3" fill="#666666">CONTENT</text>
+<text x="302" y="448" font-family="system-ui, sans-serif" font-size="22" fill="#A1A1A1">접근 방향</text>
+<text x="302" y="480" font-family="system-ui, sans-serif" font-size="22" fill="#A1A1A1">핵심 가정</text>
+<text x="302" y="512" font-family="system-ui, sans-serif" font-size="22" fill="#A1A1A1">전략</text>
+
+<text x="517" y="345" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="32" fill="#444444">→</text>
+
+<rect x="532" y="115" width="216" height="440" fill="#141414" stroke="#00CC6D" stroke-width="1" rx="2"/>
+<text x="548" y="175" font-family="Inter, system-ui, sans-serif" font-size="56" font-weight="700" letter-spacing="-2" fill="#00CC6D">03</text>
+<text x="548" y="230" font-family="system-ui, sans-serif" font-size="32" font-weight="500" fill="#FFFFFF">솔루션</text>
+<text x="548" y="262" font-family="Inter, system-ui, sans-serif" font-size="22" letter-spacing="3" fill="#A1A1A1">SOLUTION</text>
+<line x1="548" y1="288" x2="732" y2="288" stroke="#262626" stroke-width="1"/>
+<text x="548" y="325" font-family="system-ui, sans-serif" font-size="22" fill="#FFFFFF">실제로 무엇을</text>
+<text x="548" y="352" font-family="system-ui, sans-serif" font-size="22" fill="#FFFFFF">만들었나?</text>
+<text x="548" y="415" font-family="Inter, system-ui, sans-serif" font-size="22" letter-spacing="3" fill="#666666">CONTENT</text>
+<text x="548" y="448" font-family="system-ui, sans-serif" font-size="22" fill="#A1A1A1">실행 과정</text>
+<text x="548" y="480" font-family="system-ui, sans-serif" font-size="22" fill="#A1A1A1">UI · 화면</text>
+<text x="548" y="512" font-family="system-ui, sans-serif" font-size="22" fill="#A1A1A1">구조 결정</text>
+
+<text x="763" y="345" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="32" fill="#444444">→</text>
+
+<rect x="778" y="115" width="216" height="440" fill="#141414" rx="2"/>
+<text x="794" y="175" font-family="Inter, system-ui, sans-serif" font-size="56" font-weight="700" letter-spacing="-2" fill="#666666">04</text>
+<text x="794" y="230" font-family="system-ui, sans-serif" font-size="32" font-weight="500" fill="#FFFFFF">성과</text>
+<text x="794" y="262" font-family="Inter, system-ui, sans-serif" font-size="22" letter-spacing="3" fill="#A1A1A1">RESULTS</text>
+<line x1="794" y1="288" x2="978" y2="288" stroke="#262626" stroke-width="1"/>
+<text x="794" y="325" font-family="system-ui, sans-serif" font-size="22" fill="#FFFFFF">무엇이</text>
+<text x="794" y="352" font-family="system-ui, sans-serif" font-size="22" fill="#FFFFFF">바뀌었나?</text>
+<text x="794" y="415" font-family="Inter, system-ui, sans-serif" font-size="22" letter-spacing="3" fill="#666666">CONTENT</text>
+<text x="794" y="448" font-family="system-ui, sans-serif" font-size="22" fill="#A1A1A1">수치</text>
+<text x="794" y="480" font-family="system-ui, sans-serif" font-size="22" fill="#A1A1A1">피드백</text>
+<text x="794" y="512" font-family="system-ui, sans-serif" font-size="22" fill="#A1A1A1">결과물</text>
+
+<text x="1009" y="345" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="32" fill="#444444">→</text>
+
+<rect x="1024" y="115" width="216" height="440" fill="#141414" rx="2"/>
+<text x="1040" y="175" font-family="Inter, system-ui, sans-serif" font-size="56" font-weight="700" letter-spacing="-2" fill="#666666">05</text>
+<text x="1040" y="230" font-family="system-ui, sans-serif" font-size="32" font-weight="500" fill="#FFFFFF">배운 점</text>
+<text x="1040" y="262" font-family="Inter, system-ui, sans-serif" font-size="22" letter-spacing="3" fill="#A1A1A1">LEARNINGS</text>
+<line x1="1040" y1="288" x2="1224" y2="288" stroke="#262626" stroke-width="1"/>
+<text x="1040" y="325" font-family="system-ui, sans-serif" font-size="22" fill="#FFFFFF">다음엔 무엇을</text>
+<text x="1040" y="352" font-family="system-ui, sans-serif" font-size="22" fill="#FFFFFF">다르게?</text>
+<text x="1040" y="415" font-family="Inter, system-ui, sans-serif" font-size="22" letter-spacing="3" fill="#666666">CONTENT</text>
+<text x="1040" y="448" font-family="system-ui, sans-serif" font-size="22" fill="#A1A1A1">통찰</text>
+<text x="1040" y="480" font-family="system-ui, sans-serif" font-size="22" fill="#A1A1A1">회고</text>
+<text x="1040" y="512" font-family="system-ui, sans-serif" font-size="22" fill="#A1A1A1">다음 스텝</text>
+
+<line x1="40" y1="590" x2="1240" y2="590" stroke="#262626" stroke-width="1"/>
+<text x="640" y="625" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" fill="#A1A1A1">모든 케이스 스터디는 이 5단계를 순서대로 담는다 · 섹션 라벨은 영문 표기 그대로 사용</text>
+<text x="640" y="680" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="22" letter-spacing="2" fill="#666666">03 SOLUTION은 분량이 가장 큰 중심 섹션 · 이미지와 디테일 집약</text>
+</svg>
