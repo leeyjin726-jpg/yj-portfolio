@@ -45,6 +45,8 @@ body {
   font-size: 15px;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 hr {
@@ -69,6 +71,16 @@ hr {
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1.05;
+}
+
+/* ── Mobile typography refinements ───────────────────────── */
+@media (max-width: 767px) {
+  body { font-size: 14px; line-height: 1.65; }
+  .section-label { font-size: 12px; letter-spacing: 0.12em; }
+  .caption-category { letter-spacing: 0.15em; }
+  .display { letter-spacing: -0.02em; line-height: 1.1; }
+  /* Korean-aware tracking — Pretendard Korean reads better with neutral tracking */
+  :lang(ko) .display, html[lang="ko"] .display { letter-spacing: -0.01em; }
 }
 
 .pill {
@@ -171,18 +183,21 @@ hr {
 .magazine-canvas .mag-faint { color: var(--mag-fg-faint); }
 .magazine-canvas .mag-line-bg { background: var(--mag-line); }
 
-/* Scroll-driven scene entry animation */
-.mag-scene-content > * {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.9s cubic-bezier(0.2, 0.7, 0.2, 1),
-              transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+/* Scroll-driven scene entry animation
+ * Uses CSS animation triggered when scene becomes the snap target.
+ * Content stays visible by default; animation just adds a fade-up flourish on activation. */
+@keyframes mag-fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: none; }
 }
-.mag-scene[data-active="true"] .mag-scene-content > *:nth-child(1) { transition-delay: 0.05s; opacity: 1; transform: none; }
-.mag-scene[data-active="true"] .mag-scene-content > *:nth-child(2) { transition-delay: 0.18s; opacity: 1; transform: none; }
-.mag-scene[data-active="true"] .mag-scene-content > *:nth-child(3) { transition-delay: 0.30s; opacity: 1; transform: none; }
-.mag-scene[data-active="true"] .mag-scene-content > *:nth-child(4) { transition-delay: 0.42s; opacity: 1; transform: none; }
-.mag-scene[data-active="true"] .mag-scene-content > *:nth-child(5) { transition-delay: 0.54s; opacity: 1; transform: none; }
+.mag-scene[data-active="true"] .mag-scene-content > * {
+  animation: mag-fade-up 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.mag-scene[data-active="true"] .mag-scene-content > *:nth-child(1) { animation-delay: 0.05s; }
+.mag-scene[data-active="true"] .mag-scene-content > *:nth-child(2) { animation-delay: 0.18s; }
+.mag-scene[data-active="true"] .mag-scene-content > *:nth-child(3) { animation-delay: 0.30s; }
+.mag-scene[data-active="true"] .mag-scene-content > *:nth-child(4) { animation-delay: 0.42s; }
+.mag-scene[data-active="true"] .mag-scene-content > *:nth-child(5) { animation-delay: 0.54s; }
 
 .font-serif-mixed {
   font-family: 'Cormorant Garamond', 'Noto Serif KR', 'Apple SD Gothic Neo', serif;

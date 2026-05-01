@@ -56,6 +56,8 @@ export function MagazineViewer({
   const sectionRefs = useRef<(HTMLElement | null)[]>([]);
 
   useEffect(() => {
+    const root = containerRef.current;
+    if (!root) return;
     const observer = new IntersectionObserver(
       (entries) => {
         const visible = entries
@@ -68,7 +70,7 @@ export function MagazineViewer({
           if (idx !== -1) setActive(idx);
         }
       },
-      { threshold: [0.5, 0.75] }
+      { root, threshold: [0.4, 0.6, 0.8] }
     );
     sectionRefs.current.forEach((el) => el && observer.observe(el));
     return () => observer.disconnect();
@@ -124,19 +126,19 @@ export function MagazineViewer({
           </div>
 
           {/* Center content */}
-          <div className="mag-scene-content flex-1 flex flex-col items-center justify-center text-center max-w-[720px] mx-auto">
+          <div className="mag-scene-content flex-1 flex flex-col items-center justify-center text-center max-w-[600px] mx-auto w-full">
             <p className="font-serif-mixed italic text-[16px] mag-soft mb-8 tracking-[0.18em]">
               scene {ROMAN[i] ?? `${i + 1}.`}
             </p>
 
             {scene.title && (
-              <h2 className="text-[clamp(36px,5vw,60px)] font-bold leading-[1.1] tracking-[-0.02em] mb-6 mag-fg">
+              <h2 className="text-[clamp(32px,4.5vw,56px)] font-bold leading-[1.15] tracking-[-0.02em] mb-6 mag-fg text-balance max-w-full">
                 {scene.title}
               </h2>
             )}
 
             {scene.subtitle && (
-              <p className="font-serif-mixed italic text-[24px] mag-fg mb-8">
+              <p className="font-serif-mixed italic text-[clamp(18px,2vw,22px)] mag-fg mb-8 text-balance max-w-full leading-[1.4]">
                 {scene.subtitle}
               </p>
             )}
@@ -144,7 +146,7 @@ export function MagazineViewer({
             <span className="block w-12 h-px mag-line-bg mb-8 opacity-60" />
 
             {scene.body && (
-              <p className="text-[16px] leading-[1.9] mag-soft max-w-[600px] whitespace-pre-line">
+              <p className="text-[16px] leading-[1.9] mag-soft w-full whitespace-pre-line text-left">
                 {scene.body}
               </p>
             )}

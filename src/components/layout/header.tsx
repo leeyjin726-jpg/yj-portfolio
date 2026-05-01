@@ -13,48 +13,59 @@ export function Header() {
   const localeSwitchPath = pathname.replace(`/${locale}`, `/${otherLocale}`);
 
   const navLinks = [
-    { href: `/${locale}/about`, label: "ABOUT" },
-    { href: `/${locale}/work/design`, label: "PORTFOLIO" },
-    { href: `/${locale}/blog`, label: "BLOG" },
-    { href: `/${locale}/magazine`, label: "MAGAZINE" },
-    { href: `/${locale}/shop`, label: "SHOP" },
-    { href: `/${locale}/contact`, label: "CONTACT" },
+    { href: `/${locale}/about`, label: "About" },
+    { href: `/${locale}/work/design`, label: "Portfolio" },
+    { href: `/${locale}/blog`, label: "Blog" },
+    { href: `/${locale}/magazine`, label: "Magazine" },
+    { href: `/${locale}/shop`, label: "Shop" },
+    { href: `/${locale}/contact`, label: "Contact" },
   ];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-canvas/90 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 border-b border-line/50 bg-canvas/40 backdrop-blur-xl">
       <div className="max-w-[1280px] mx-auto px-[80px] max-md:px-10 h-14 flex items-center justify-between">
-        <Link
-          href={`/${locale}`}
-          className="section-label text-foreground hover:text-accent transition-colors"
-        >
-          TTIYONG.ART
-        </Link>
-
-        {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="section-label text-softer hover:text-foreground transition-colors"
-            >
-              {link.label}
-            </Link>
-          ))}
+        {/* Left cluster: logo + nav */}
+        <div className="flex items-center gap-10">
           <Link
-            href={localeSwitchPath}
-            className="section-label text-faint hover:text-softer transition-colors border-l border-line pl-6"
+            href={`/${locale}`}
+            className="text-[14px] font-semibold tracking-[0.04em] text-foreground hover:text-accent transition-colors"
           >
-            {otherLocale.toUpperCase()}
+            TTIYONG.ART
           </Link>
-        </nav>
+
+          <nav className="hidden md:flex items-center gap-6">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-[13px] text-softer hover:text-foreground transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+
+        {/* Right cluster: locale */}
+        <div className="hidden md:flex items-center gap-3 text-[13px]">
+          <span className={locale === "ko" ? "text-foreground underline underline-offset-4" : "text-faint"}>
+            {locale === "ko" ? "KR" : (
+              <Link href={localeSwitchPath.replace(`/${otherLocale}`, "/ko")} className="hover:text-foreground transition-colors">KR</Link>
+            )}
+          </span>
+          <span className="text-faint">|</span>
+          <span className={locale === "en" ? "text-foreground underline underline-offset-4" : "text-faint"}>
+            {locale === "en" ? "EN" : (
+              <Link href={localeSwitchPath.replace(`/${otherLocale}`, "/en")} className="hover:text-foreground transition-colors">EN</Link>
+            )}
+          </span>
+        </div>
 
         {/* Mobile: locale + hamburger */}
         <div className="flex md:hidden items-center gap-4">
           <Link
             href={localeSwitchPath}
-            className="section-label text-faint"
+            className="text-[13px] text-faint"
           >
             {otherLocale.toUpperCase()}
           </Link>
@@ -81,7 +92,7 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="section-label text-softer hover:text-foreground transition-colors"
+                className="text-[15px] text-softer hover:text-foreground transition-colors"
               >
                 {link.label}
               </Link>
