@@ -8,6 +8,7 @@ import { urlFor } from "@/sanity/image";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { ChannelLink } from "@/components/channel-link";
+import { SiteCard } from "@/components/site-card";
 import { OPERATING_SITES } from "@/lib/operating-sites";
 import { SNS_CHANNELS } from "@/lib/sns-channels";
 
@@ -68,23 +69,19 @@ async function DesignContent({
       <main className="flex-1 max-w-[1280px] mx-auto px-[80px] max-md:px-10 py-[120px]">
         <p className="section-label text-softer mb-16">{t("design_title")}</p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 pb-20 mb-20 border-b border-line">
-          <div>
-            <p className="section-label text-softer mb-8">운영 중인 사이트</p>
-            <div className="flex flex-col">
-              {OPERATING_SITES.map((site) => (
-                <ChannelLink key={site.url} {...site} actionLabel="Visit" />
-              ))}
-            </div>
+        <div className="pb-20 mb-20 border-b border-line">
+          <p className="section-label text-softer mb-8">운영 중인 사이트</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+            {OPERATING_SITES.map((site) => (
+              <SiteCard key={site.url} {...site} />
+            ))}
           </div>
 
-          <div>
-            <p className="section-label text-softer mb-8">SNS</p>
-            <div className="flex flex-col">
-              {SNS_CHANNELS.map((channel) => (
-                <ChannelLink key={channel.url} {...channel} actionLabel="Instagram" />
-              ))}
-            </div>
+          <p className="section-label text-softer mb-8">SNS</p>
+          <div className="flex flex-col max-w-[560px]">
+            {SNS_CHANNELS.map((channel) => (
+              <ChannelLink key={channel.url} {...channel} actionLabel="Instagram" />
+            ))}
           </div>
         </div>
 
