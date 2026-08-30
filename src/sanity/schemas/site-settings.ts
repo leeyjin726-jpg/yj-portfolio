@@ -57,6 +57,7 @@ export const siteSettings = defineType({
         { name: "linkedin", type: "url", title: "LinkedIn" },
         { name: "github", type: "url", title: "GitHub" },
         { name: "email", type: "string", title: "Email" },
+        { name: "kakaoOpenChat", type: "url", title: "카카오톡 오픈채팅" },
       ],
     }),
   ],

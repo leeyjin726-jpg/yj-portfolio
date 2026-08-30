@@ -7,6 +7,9 @@ import { getPortfolioItems, getSiteSettings } from "@/sanity/fetch";
 import { urlFor } from "@/sanity/image";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { ChannelLink } from "@/components/channel-link";
+import { OPERATING_SITES } from "@/lib/operating-sites";
+import { SNS_CHANNELS } from "@/lib/sns-channels";
 
 export async function generateMetadata({
   params,
@@ -106,6 +109,26 @@ async function DesignContent({
             ))}
           </div>
         )}
+
+        <div className="mt-20 pt-12 border-t border-line grid grid-cols-1 md:grid-cols-2 gap-16">
+          <div>
+            <p className="section-label text-softer mb-8">운영 중인 사이트</p>
+            <div className="flex flex-col">
+              {OPERATING_SITES.map((site) => (
+                <ChannelLink key={site.url} {...site} actionLabel="Visit" />
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <p className="section-label text-softer mb-8">SNS</p>
+            <div className="flex flex-col">
+              {SNS_CHANNELS.map((channel) => (
+                <ChannelLink key={channel.url} {...channel} actionLabel="Instagram" />
+              ))}
+            </div>
+          </div>
+        </div>
       </main>
       <Footer socialLinks={settings?.socialLinks} />
     </>

@@ -143,38 +143,6 @@ async function AboutContent({
           </div>
         )}
 
-        {settings?.socialLinks && (
-          <div className="mt-16 pt-12 border-t border-line flex gap-8 flex-wrap">
-            {settings.socialLinks.instagram && (
-              <a
-                href={settings.socialLinks.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="action-link"
-              >
-                Instagram
-              </a>
-            )}
-            {settings.socialLinks.linkedin && (
-              <a
-                href={settings.socialLinks.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="action-link"
-              >
-                LinkedIn
-              </a>
-            )}
-            {settings.socialLinks.email && (
-              <a
-                href={`mailto:${settings.socialLinks.email}`}
-                className="action-link"
-              >
-                Email
-              </a>
-            )}
-          </div>
-        )}
       </main>
       <Footer socialLinks={settings?.socialLinks} />
     </>
