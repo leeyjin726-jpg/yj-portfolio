@@ -7,6 +7,7 @@ import { getFeaturedPortfolio, getLatestBlogPosts, getSiteSettings } from "@/san
 import { urlFor } from "@/sanity/image";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { HomeStory } from "@/components/home-story";
 
 export async function generateMetadata({
   params,
@@ -105,6 +106,9 @@ async function HomeContent({
             <span className="line" />
           </div>
         </div>
+
+        {/* Story */}
+        <HomeStory />
 
         {/* Featured Work */}
         {portfolio.length > 0 && (
