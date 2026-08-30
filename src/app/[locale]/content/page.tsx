@@ -98,7 +98,7 @@ async function ContentIndexContent({
           <p className="text-softer text-[15px]">준비 중입니다.</p>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {items.map((item, i) => (
+            {items.map((item) => (
               <Link
                 key={item.id}
                 href={`/${item.type}/${item.slug}`}
@@ -118,12 +118,9 @@ async function ContentIndexContent({
                 ) : (
                   <div className="aspect-[4/5] bg-raised" />
                 )}
-                <div className="p-4">
+                <div className="p-5">
                   <figcaption className="caption">
-                    <span className="caption-category">
-                      {String(i + 1).padStart(2, "0")} — {item.badge.toUpperCase()}
-                    </span>
-                    <h2 className="caption-title group-hover:text-accent transition-colors">
+                    <h2 className="caption-title !text-[19px] group-hover:text-accent transition-colors">
                       {item.title?.[locale]}
                     </h2>
                     {item.summary?.[locale] && (
