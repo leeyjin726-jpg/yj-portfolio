@@ -17,13 +17,21 @@ export function HomeStory() {
         )}
       </div>
 
-      {!expanded && (
-        <div className="mt-10">
+      <div className="mt-10">
+        {expanded ? (
+          <button
+            type="button"
+            onClick={() => setExpanded(false)}
+            className="button-outline after:!content-['↑']"
+          >
+            접기
+          </button>
+        ) : (
           <button type="button" onClick={() => setExpanded(true)} className="button-outline">
             더보기
           </button>
-        </div>
-      )}
+        )}
+      </div>
     </section>
   );
 }
