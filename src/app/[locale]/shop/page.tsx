@@ -65,7 +65,17 @@ async function ShopContent({
         <p className="section-label text-softer mb-16">{t("title")}</p>
 
         {products.length === 0 ? (
-          <p className="text-softer text-[15px]">{t("coming_soon")}</p>
+          <div className="flex flex-col items-center text-center py-16">
+            <Image
+              src="/images/shop-coming-soon.png"
+              alt=""
+              width={1024}
+              height={1536}
+              className="w-[200px] h-auto mb-8"
+              priority
+            />
+            <p className="text-softer text-[15px]">{t("coming_soon")}</p>
+          </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {products.map((product: any) => (
