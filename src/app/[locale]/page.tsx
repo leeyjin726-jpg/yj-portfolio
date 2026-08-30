@@ -83,7 +83,7 @@ async function HomeContent({
               <p className="text-[15px] text-softer leading-[1.7] mb-10 max-w-xs">
                 {t("hero_subtitle")}
               </p>
-              <Link href="/contact" className="action-link">
+              <Link href="/contact" className="button-primary">
                 {t("cta")}
               </Link>
             </div>
@@ -140,11 +140,11 @@ async function HomeContent({
                 </Link>
               ))}
             </div>
-            <div className="mt-12 flex gap-8">
-              <Link href="/work/design" className="action-link">
+            <div className="mt-12 flex gap-4 flex-wrap">
+              <Link href="/work/design" className="button-outline">
                 {navT("design")}
               </Link>
-              <Link href="/work/content" className="action-link">
+              <Link href="/work/content" className="button-outline">
                 {navT("content")}
               </Link>
             </div>
@@ -184,7 +184,7 @@ async function HomeContent({
                 </article>
               ))}
             </div>
-            <Link href="/content" className="action-link inline-block mt-10">
+            <Link href="/content" className="button-outline mt-10">
               {navT("blog")}
             </Link>
           </section>

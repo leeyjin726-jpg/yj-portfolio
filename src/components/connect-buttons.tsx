@@ -5,7 +5,7 @@ interface ConnectButtonsProps {
 
 export function ConnectButtons({ email, kakaoOpenChat }: ConnectButtonsProps) {
   return (
-    <div className="flex flex-col gap-4 max-w-[420px]">
+    <div className="flex flex-col gap-4 max-w-[420px] mx-auto">
       <a
         href={kakaoOpenChat}
         target="_blank"

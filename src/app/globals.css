@@ -135,6 +135,40 @@ hr {
 .action-link::after { content: '  →'; }
 .action-link:hover { opacity: 0.7; }
 
+/* Wide pill buttons — for primary/secondary calls to action only,
+   not for inline row actions or back-links (those stay .action-link). */
+.button-primary, .button-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 52px;
+  padding: 0 32px;
+  border-radius: 100px;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  cursor: pointer;
+}
+.button-primary::after, .button-outline::after { content: '→'; }
+
+.button-primary {
+  background: var(--accent);
+  color: var(--bg);
+  border: 1px solid var(--accent);
+}
+.button-primary:hover { background: transparent; color: var(--accent); }
+
+.button-outline {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+}
+.button-outline:hover { border-color: var(--accent); color: var(--accent); }
+
 .card {
   background: var(--surface);
   border: 1px solid transparent;

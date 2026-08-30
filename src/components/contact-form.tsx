@@ -142,7 +142,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="action-link disabled:opacity-40"
+        className="button-primary disabled:opacity-40"
       >
         {status === "sending" ? t("sending") : t("send")}
       </button>
