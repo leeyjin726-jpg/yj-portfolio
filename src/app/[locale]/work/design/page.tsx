@@ -59,7 +59,6 @@ async function DesignContent({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "work" });
   const [items, settings] = await Promise.all([
     getPortfolioItems("design"),
     getSiteSettings(),
@@ -68,8 +67,6 @@ async function DesignContent({
   return (
     <>
       <main className="flex-1 max-w-[1280px] mx-auto px-[80px] max-md:px-10 py-[120px]">
-        <p className="section-label text-softer mb-16">{t("design_title")}</p>
-
         <div className="pb-20 mb-20 border-b border-line">
           <SectionTitle
             word="CHANNELS"
