@@ -122,7 +122,7 @@ async function ContentIndexContent({
                 ) : (
                   <div className="aspect-[4/5] bg-raised" />
                 )}
-                <div className="p-5">
+                <div className="px-5 py-6">
                   <figcaption className="caption">
                     <h2 className="caption-title !text-[19px] group-hover:text-accent transition-colors">
                       {item.title?.[locale]}
