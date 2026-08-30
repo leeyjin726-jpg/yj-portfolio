@@ -9,6 +9,7 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { ChannelLink } from "@/components/channel-link";
 import { SiteCard } from "@/components/site-card";
+import { SectionTitle } from "@/components/section-title";
 import { OPERATING_SITES } from "@/lib/operating-sites";
 import { SNS_CHANNELS } from "@/lib/sns-channels";
 
@@ -70,6 +71,10 @@ async function DesignContent({
         <p className="section-label text-softer mb-16">{t("design_title")}</p>
 
         <div className="pb-20 mb-20 border-b border-line">
+          <SectionTitle
+            word="CHANNELS"
+            subtitle="현재 운영 중이거나 맡아서 진행 중인 프로젝트와 채널들을 소개합니다."
+          />
           <p className="section-label text-softer mb-8">운영 중인 사이트</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
             {OPERATING_SITES.map((site) => (
@@ -84,6 +89,11 @@ async function DesignContent({
             ))}
           </div>
         </div>
+
+        <SectionTitle
+          word="디자인"
+          subtitle="브랜드와 제품에 형태를 부여하는 디자인 작업들입니다."
+        />
 
         {items.length === 0 ? (
           <p className="text-softer text-[15px]">준비 중입니다.</p>
