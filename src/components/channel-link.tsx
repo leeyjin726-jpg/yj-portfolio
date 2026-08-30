@@ -24,7 +24,10 @@ export function ChannelLink({ name, handle, url, actionLabel }: ChannelLinkProps
           {handle}
         </p>
       </div>
-      <span translate="no" className="notranslate action-link">
+      <span
+        translate="no"
+        className="notranslate button-outline pointer-events-none group-hover:border-accent group-hover:text-accent"
+      >
         {actionLabel}
       </span>
     </a>

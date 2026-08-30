@@ -83,7 +83,7 @@ async function DesignContent({
           </div>
 
           <p className="section-label text-softer mb-8">SNS</p>
-          <div className="flex flex-col max-w-[560px]">
+          <div className="flex flex-col">
             {SNS_CHANNELS.map((channel) => (
               <ChannelLink key={channel.url} {...channel} actionLabel="Instagram" />
             ))}
@@ -91,8 +91,8 @@ async function DesignContent({
         </div>
 
         <SectionTitle
-          word="디자인"
-          subtitle="브랜드와 제품에 형태를 부여하는 디자인 작업들입니다."
+          word="DESIGN"
+          subtitle="다양한 디자인 작업물을 확인할 수 있습니다."
         />
 
         {items.length === 0 ? (
