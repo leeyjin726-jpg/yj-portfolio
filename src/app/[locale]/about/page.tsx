@@ -4,7 +4,6 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { PortableText } from "@portabletext/react";
 import { getAboutPage, getSiteSettings } from "@/sanity/fetch";
-import { urlFor } from "@/sanity/image";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 
@@ -58,17 +57,16 @@ async function AboutContent({
       <main className="flex-1 max-w-[860px] mx-auto px-[80px] max-md:px-10 py-[120px]">
         <p className="section-label text-softer mb-16">ABOUT</p>
 
-        {about?.profileImage && (
-          <div className="w-20 h-20 rounded-full overflow-hidden mb-12 bg-raised">
-            <Image
-              src={urlFor(about.profileImage).width(200).height(200).url()}
-              alt="Profile"
-              width={200}
-              height={200}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        )}
+        <div className="w-[200px] mb-12">
+          <Image
+            src="/images/avatar.png"
+            alt="Avatar"
+            width={1182}
+            height={1330}
+            className="w-full h-auto"
+            priority
+          />
+        </div>
 
         {about?.bio?.[locale] ? (
           <div className="prose prose-invert max-w-none">
