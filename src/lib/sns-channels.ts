@@ -5,7 +5,7 @@ export const SNS_CHANNELS = [
     url: "https://www.instagram.com/mini.deutschmotors/",
   },
   {
-    name: "SUPPL",
+    name: "SUPPL MAGAZINE",
     handle: "@suppl.mag",
     url: "https://www.instagram.com/suppl.mag/",
   },

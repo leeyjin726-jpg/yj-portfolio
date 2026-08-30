@@ -14,12 +14,19 @@ export function ChannelLink({ name, handle, url, actionLabel }: ChannelLinkProps
       className="group flex items-center justify-between py-4 border-b border-line first:border-t"
     >
       <div>
-        <p className="text-[15px] text-foreground group-hover:text-accent transition-colors">
+        <p
+          translate="no"
+          className="notranslate text-[15px] text-foreground group-hover:text-accent transition-colors"
+        >
           {name}
         </p>
-        <p className="caption-meta">{handle}</p>
+        <p translate="no" className="notranslate caption-meta">
+          {handle}
+        </p>
       </div>
-      <span className="action-link">{actionLabel}</span>
+      <span translate="no" className="notranslate action-link">
+        {actionLabel}
+      </span>
     </a>
   );
 }

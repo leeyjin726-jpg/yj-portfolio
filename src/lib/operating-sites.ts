@@ -1,6 +1,6 @@
 export const OPERATING_SITES = [
   {
-    name: "SUPPL",
+    name: "SUPPL MAGAZINE",
     handle: "suppl.kr",
     url: "https://www.suppl.kr/",
   },

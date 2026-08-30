@@ -140,14 +140,6 @@ async function HomeContent({
                 </Link>
               ))}
             </div>
-            <div className="mt-12 flex gap-4 flex-wrap">
-              <Link href="/work/design" className="button-outline">
-                {navT("design")}
-              </Link>
-              <Link href="/work/content" className="button-outline">
-                {navT("content")}
-              </Link>
-            </div>
           </section>
         )}
 
