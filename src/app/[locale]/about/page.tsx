@@ -74,7 +74,7 @@ async function AboutContent({
           </div>
         ) : (
           <div className="space-y-[100px] max-md:space-y-16">
-            <h1 className="display text-foreground max-w-[600px]">
+            <h1 className="text-[clamp(45px,6.4vw,77px)] font-bold leading-[1.05] tracking-[-0.04em] text-foreground max-w-[600px]">
               글 쓰는 디자이너,
               <br />
               이용진입니다<span className="text-accent">.</span>
