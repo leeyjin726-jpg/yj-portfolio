@@ -62,8 +62,6 @@ async function ShopContent({
   return (
     <>
       <main className="flex-1 max-w-[1280px] mx-auto px-[80px] max-md:px-10 py-[120px]">
-        <p className="section-label text-softer mb-16">{t("title")}</p>
-
         {products.length === 0 ? (
           <div className="flex flex-col items-center text-center py-16">
             <Image
