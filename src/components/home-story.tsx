@@ -7,7 +7,7 @@ export function HomeStory() {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <section className="max-w-[1280px] mx-auto px-[80px] max-md:px-10 py-[120px] border-t border-line">
+    <section className="max-w-[1280px] mx-auto px-[80px] max-md:px-10 py-[120px]">
       <p className="section-label text-softer mb-12">STORY</p>
 
       <div className={expanded ? "relative" : "relative max-h-[420px] overflow-hidden"}>
