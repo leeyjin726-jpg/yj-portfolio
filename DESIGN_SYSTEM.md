@@ -1,6 +1,6 @@
 # ldj portfolio · Design System v1.3
 
-Minimal typography-first portfolio. Dark base + neon green accent.
+Minimal typography-first portfolio. Dark base + signal orange accent.
 Inspired by SLATE minimalism and Tikkle's neon green moment.
 Prepared for Warp / Claude Code · ldj@workscombine · 2025.04
 
@@ -24,7 +24,7 @@ Optional: add a reference in your CLAUDE.md so Claude Code auto-loads the contex
 ### Philosophy
 
 - Dark minimal base — #0A0A0A background, near-black but slightly warm. Never pure #000000.
-- One accent, sparingly used — Muted green #00CC6D on less than 10% of any view. Reserved for hover/active states, numbered badges, key highlights, and punctuation accents (the period after display titles).
+- One accent, sparingly used — Signal orange #FA5112 on less than 10% of any view. Reserved for hover/active states, numbered badges, key highlights, and punctuation accents (the period after display titles).
 - Extreme typography scale — Display (72-96px) + body (14-15px). No mid-sized headings. Hierarchy through scale contrast, not weight.
 - Sentence-level restraint — English UPPERCASE for section labels only. Korean body stays regular case.
 - Whitespace first — Sections separated by 120-200px vertical space. Never cramp.
@@ -40,7 +40,7 @@ Optional: add a reference in your CLAUDE.md so Claude Code auto-loads the contex
 | --text-primary | #FFFFFF | Headings, emphasis |
 | --text-secondary | #A1A1A1 | Body, meta |
 | --text-tertiary | #666666 | Labels, captions |
-| --accent | #00CC6D | Muted green accent |
+| --accent | #FA5112 | Signal orange accent |
 | --accent-glow | rgba(0,204,109,0.25) | Subtle glow (use rarely) |
 
 ### Typography
@@ -211,7 +211,7 @@ Use for: category landing pages (Web, Editorial, Motion, Writing)
 
 - Breadcrumb meta: ldj / CATEGORY — 02 / EDITORIAL left + year range right
 - Full-width hero image (2:1 or 16:9) with overlay captions at top-left and bottom-right
-- Centered marker divider (white tick + neon green dot)
+- Centered marker divider (white tick + signal orange dot)
 - Left display title (with accent period: `Editorial.` with green `.`) + right single-column body
 - Bottom nav: circular × BACK TO INDEX left + READ/EXPLORE → right
 
@@ -253,7 +253,7 @@ Use for: category landing pages (Web, Editorial, Motion, Writing)
 
 ## 6. Don'ts
 
-- ✗ Multiple accent colors — stick to one neon green
+- ✗ Multiple accent colors — stick to one signal orange
 - ✗ Mid-sized headings (16-40px) — hierarchy is big or small
 - ✗ Large rounded corners (>8px) — no bento-card bubbles
 - ✗ Heavy borders (>1px except 2px on active state)
@@ -279,7 +279,7 @@ module.exports = {
         'text-primary': '#FFFFFF',
         'text-secondary': '#A1A1A1',
         'text-tertiary': '#666666',
-        accent: '#00CC6D',
+        accent: '#FA5112',
       },
       fontFamily: {
         sans: ['Pretendard Variable', 'system-ui', 'sans-serif'],
