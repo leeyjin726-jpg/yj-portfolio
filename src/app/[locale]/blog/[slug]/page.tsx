@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { PortableText } from "@portabletext/react";
@@ -70,7 +70,7 @@ async function BlogPostContent({
   return (
     <main className="flex-1 max-w-[860px] mx-auto px-[80px] max-md:px-10 py-[120px]">
       <Link
-        href={`/${locale}/blog`}
+        href="/content"
         className="action-link inline-block mb-16"
       >
         ← {t("back")}

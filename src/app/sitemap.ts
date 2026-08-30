@@ -7,11 +7,14 @@ const locales = ["ko", "en"];
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const slugs = await getBlogPostSlugs();
 
-  const staticPages = ["/", "/about", "/work/design", "/work/content", "/blog", "/shop", "/contact"];
+  const staticPages = ["/", "/about", "/work/design", "/work/content", "/content", "/shop", "/contact"];
+
+  const localizedPath = (locale: string, path: string) =>
+    locale === "ko" ? path : `/${locale}${path}`;
 
   const staticUrls = staticPages.flatMap((page) =>
     locales.map((locale) => ({
-      url: `${baseUrl}/${locale}${page}`,
+      url: `${baseUrl}${localizedPath(locale, page)}`,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: page === "/" ? 1 : 0.8,
@@ -20,7 +23,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const blogUrls = slugs.flatMap((slug) =>
     locales.map((locale) => ({
-      url: `${baseUrl}/${locale}/blog/${slug}`,
+      url: `${baseUrl}${localizedPath(locale, `/blog/${slug}`)}`,
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: 0.6,

@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { PortableText } from "@portabletext/react";
@@ -114,7 +114,7 @@ async function PortfolioDetailContent({
 
   if (!item) notFound();
 
-  const backHref = `/${locale}/work/${item.category === "content" ? "content" : "design"}`;
+  const backHref = `/work/${item.category === "content" ? "content" : "design"}`;
   const hasCaseStudy = CASE_SECTIONS.some((s) => item[s.key]?.length);
 
   return (

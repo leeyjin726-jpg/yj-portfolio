@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { getTranslations } from "next-intl/server";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import type { Metadata } from "next";
 import { getFeaturedPortfolio, getLatestBlogPosts, getSiteSettings } from "@/sanity/fetch";
@@ -83,7 +83,7 @@ async function HomeContent({
               <p className="text-[15px] text-softer leading-[1.7] mb-10 max-w-xs">
                 {t("hero_subtitle")}
               </p>
-              <Link href={`/${locale}/contact`} className="action-link">
+              <Link href="/contact" className="action-link">
                 {t("cta")}
               </Link>
             </div>
@@ -108,7 +108,7 @@ async function HomeContent({
               {portfolio.slice(0, 3).map((item: any, i: number) => (
                 <Link
                   key={item._id}
-                  href={`/${locale}/work/${item.slug?.current}`}
+                  href={`/work/${item.slug?.current}`}
                   className="card group overflow-hidden block"
                 >
                   {item.coverImage ? (
@@ -141,10 +141,10 @@ async function HomeContent({
               ))}
             </div>
             <div className="mt-12 flex gap-8">
-              <Link href={`/${locale}/work/design`} className="action-link">
+              <Link href="/work/design" className="action-link">
                 {navT("design")}
               </Link>
-              <Link href={`/${locale}/work/content`} className="action-link">
+              <Link href="/work/content" className="action-link">
                 {navT("content")}
               </Link>
             </div>
@@ -162,7 +162,7 @@ async function HomeContent({
                   className="border-b border-line pb-8 last:border-none last:pb-0"
                 >
                   <Link
-                    href={`/${locale}/blog/${post.slug?.current}`}
+                    href={`/blog/${post.slug?.current}`}
                     className="group block"
                   >
                     <time className="caption-category">
@@ -184,7 +184,7 @@ async function HomeContent({
                 </article>
               ))}
             </div>
-            <Link href={`/${locale}/blog`} className="action-link inline-block mt-10">
+            <Link href="/content" className="action-link inline-block mt-10">
               {navT("blog")}
             </Link>
           </section>

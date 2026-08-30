@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import type { Metadata } from "next";
 import { getPortfolioItems, getSiteSettings } from "@/sanity/fetch";
 import { urlFor } from "@/sanity/image";
@@ -72,7 +72,7 @@ async function DesignContent({
             {items.map((item: any, i: number) => (
               <Link
                 key={item._id}
-                href={`/${locale}/work/${item.slug?.current}`}
+                href={`/work/${item.slug?.current}`}
                 aria-label={`${item.title?.[locale] ?? ""} 케이스 스터디 보기`}
                 className="card group overflow-hidden block"
               >

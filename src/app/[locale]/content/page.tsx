@@ -1,17 +1,28 @@
 import { Suspense } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import type { Metadata } from "next";
-import { getMagazines, getSiteSettings } from "@/sanity/fetch";
+import { getBlogPosts, getMagazines, getSiteSettings } from "@/sanity/fetch";
 import { urlFor } from "@/sanity/image";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 
 export const metadata: Metadata = {
-  title: "Magazine",
+  title: "Content",
 };
 
-export default function MagazineIndexPage({
+type ContentItem = {
+  id: string;
+  type: "blog" | "magazine";
+  slug: string;
+  title: Record<string, string>;
+  summary?: Record<string, string>;
+  coverImage: unknown;
+  publishedAt: string;
+  badge: string;
+};
+
+export default function ContentIndexPage({
   params,
 }: {
   params: Promise<{ locale: string }>;
@@ -35,37 +46,63 @@ export default function MagazineIndexPage({
           </div>
         }
       >
-        <MagazineIndexContent params={params} />
+        <ContentIndexContent params={params} />
       </Suspense>
     </>
   );
 }
 
-async function MagazineIndexContent({
+async function ContentIndexContent({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const [items, settings] = await Promise.all([
+  const [posts, magazines, settings] = await Promise.all([
+    getBlogPosts(),
     getMagazines(),
     getSiteSettings(),
   ]);
 
+  const items: ContentItem[] = [
+    ...posts.map((post: any) => ({
+      id: post._id,
+      type: "blog" as const,
+      slug: post.slug?.current,
+      title: post.title,
+      summary: post.excerpt,
+      coverImage: post.coverImage,
+      publishedAt: post.publishedAt,
+      badge: "BLOG",
+    })),
+    ...magazines.map((mag: any) => ({
+      id: mag._id,
+      type: "magazine" as const,
+      slug: mag.slug,
+      title: mag.title,
+      summary: mag.description,
+      coverImage: mag.coverImage,
+      publishedAt: mag.publishedAt,
+      badge: mag.seriesLabel ?? "MAGAZINE",
+    })),
+  ].sort(
+    (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+  );
+
   return (
     <>
       <main className="flex-1 max-w-[1280px] mx-auto px-[80px] max-md:px-10 py-[120px]">
-        <p className="section-label text-softer mb-16">MAGAZINE</p>
+        <p className="section-label text-softer mb-16">CONTENT</p>
 
         {items.length === 0 ? (
           <p className="text-softer text-[15px]">준비 중입니다.</p>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {items.map((item: any, i: number) => (
+            {items.map((item, i) => (
               <Link
-                key={item._id}
-                href={`/${locale}/magazine/${item.slug}`}
-                aria-label={`${item.title?.[locale] ?? ""} 매거진 보기`}
+                key={item.id}
+                href={`/${item.type}/${item.slug}`}
+                aria-label={`${item.title?.[locale] ?? ""} 보기`}
                 className="card group overflow-hidden block"
               >
                 {item.coverImage ? (
@@ -84,14 +121,14 @@ async function MagazineIndexContent({
                 <div className="p-4">
                   <figcaption className="caption">
                     <span className="caption-category">
-                      {String(i + 1).padStart(2, "0")} — {item.seriesLabel}
+                      {String(i + 1).padStart(2, "0")} — {item.badge.toUpperCase()}
                     </span>
                     <h2 className="caption-title group-hover:text-accent transition-colors">
                       {item.title?.[locale]}
                     </h2>
-                    {item.description?.[locale] && (
+                    {item.summary?.[locale] && (
                       <p className="caption-meta line-clamp-2">
-                        {item.description[locale]}
+                        {item.summary[locale]}
                       </p>
                     )}
                   </figcaption>

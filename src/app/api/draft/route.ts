@@ -16,8 +16,8 @@ export async function GET(request: NextRequest) {
   draft.enable();
 
   if (type === "blogPost" && slug) {
-    redirect(`/ko/blog/${slug}`);
+    redirect(`/blog/${slug}`);
   }
 
-  redirect("/ko");
+  redirect("/");
 }

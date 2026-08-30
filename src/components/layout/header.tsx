@@ -1,7 +1,6 @@
 "use client";
-import Link from "next/link";
 import { useLocale } from "next-intl";
-import { usePathname } from "next/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import { useState } from "react";
 
 export function Header() {
@@ -10,15 +9,13 @@ export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const otherLocale = locale === "ko" ? "en" : "ko";
-  const localeSwitchPath = pathname.replace(`/${locale}`, `/${otherLocale}`);
 
   const navLinks = [
-    { href: `/${locale}/about`, label: "About" },
-    { href: `/${locale}/work/design`, label: "Portfolio" },
-    { href: `/${locale}/blog`, label: "Blog" },
-    { href: `/${locale}/magazine`, label: "Magazine" },
-    { href: `/${locale}/shop`, label: "Shop" },
-    { href: `/${locale}/contact`, label: "Contact" },
+    { href: "/about", label: "About" },
+    { href: "/work/design", label: "Portfolio" },
+    { href: "/content", label: "Content" },
+    { href: "/shop", label: "Shop" },
+    { href: "/contact", label: "Contact" },
   ];
 
   return (
@@ -27,7 +24,7 @@ export function Header() {
         {/* Left cluster: logo + nav */}
         <div className="flex items-center gap-10">
           <Link
-            href={`/${locale}`}
+            href="/"
             className="text-[14px] font-semibold tracking-[0.04em] text-foreground hover:text-accent transition-colors"
           >
             TTIYONG.ART
@@ -50,13 +47,13 @@ export function Header() {
         <div className="hidden md:flex items-center gap-3 text-[13px]">
           <span className={locale === "ko" ? "text-foreground underline underline-offset-4" : "text-faint"}>
             {locale === "ko" ? "KR" : (
-              <Link href={localeSwitchPath.replace(`/${otherLocale}`, "/ko")} className="hover:text-foreground transition-colors">KR</Link>
+              <Link href={pathname} locale="ko" className="hover:text-foreground transition-colors">KR</Link>
             )}
           </span>
           <span className="text-faint">|</span>
           <span className={locale === "en" ? "text-foreground underline underline-offset-4" : "text-faint"}>
             {locale === "en" ? "EN" : (
-              <Link href={localeSwitchPath.replace(`/${otherLocale}`, "/en")} className="hover:text-foreground transition-colors">EN</Link>
+              <Link href={pathname} locale="en" className="hover:text-foreground transition-colors">EN</Link>
             )}
           </span>
         </div>
@@ -64,7 +61,8 @@ export function Header() {
         {/* Mobile: locale + hamburger */}
         <div className="flex md:hidden items-center gap-4">
           <Link
-            href={localeSwitchPath}
+            href={pathname}
+            locale={otherLocale}
             className="text-[13px] text-faint"
           >
             {otherLocale.toUpperCase()}
