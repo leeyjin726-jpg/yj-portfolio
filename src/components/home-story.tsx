@@ -17,7 +17,7 @@ export function HomeStory() {
         )}
       </div>
 
-      <div className="mt-10">
+      <div className="mt-10 flex justify-center">
         {expanded ? (
           <button
             type="button"
