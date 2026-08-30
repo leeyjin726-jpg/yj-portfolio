@@ -56,8 +56,6 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-8">
-      <p className="section-label text-softer mb-16">{t("title")}</p>
-
       {/* Honeypot: hidden from real users, bots fill it in */}
       <input
         type="text"
@@ -139,13 +137,15 @@ export function ContactForm() {
         <p className="text-[14px] text-red-500">{t("error")}</p>
       )}
 
-      <button
-        type="submit"
-        disabled={status === "sending"}
-        className="button-primary disabled:opacity-40"
-      >
-        {status === "sending" ? t("sending") : t("send")}
-      </button>
+      <div className="flex justify-center">
+        <button
+          type="submit"
+          disabled={status === "sending"}
+          className="button-primary disabled:opacity-40 !px-14"
+        >
+          {status === "sending" ? t("sending") : t("send")}
+        </button>
+      </div>
     </form>
   );
 }

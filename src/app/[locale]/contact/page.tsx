@@ -87,7 +87,7 @@ async function ContactContent({
           <span className="line" />
         </div>
 
-        <p className="caption-category mb-8">또는 아래 폼으로 문의하기</p>
+        <p className="text-[20px] font-semibold text-foreground mb-8">아래 폼으로 문의하기</p>
 
         <ContactForm />
       </main>
