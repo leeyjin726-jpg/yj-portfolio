@@ -74,7 +74,6 @@ async function HomeContent({
       <main className="flex-1">
         {/* Hero */}
         <section className="max-w-[1280px] mx-auto px-[80px] max-md:px-10 pt-[120px] pb-[160px]">
-          <p className="section-label text-softer mb-8">PORTFOLIO</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-end">
             <h1 className="text-[clamp(56px,8vw,96px)] font-bold leading-[1.05] tracking-[-0.04em] text-foreground">
               {t("hero_title")}
@@ -83,7 +82,7 @@ async function HomeContent({
               <p className="text-[15px] text-softer leading-[1.7] mb-10 max-w-xs">
                 {t("hero_subtitle")}
               </p>
-              <Link href="/contact" className="button-primary">
+              <Link href="/about" className="button-primary">
                 {t("cta")}
               </Link>
             </div>
