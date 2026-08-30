@@ -1,5 +1,4 @@
 import { useTranslations } from "next-intl";
-import { DEFAULT_SOCIAL_LINKS } from "@/lib/contact-links";
 
 interface FooterProps {
   socialLinks?: {
@@ -11,10 +10,9 @@ interface FooterProps {
   };
 }
 
-export function Footer({ socialLinks: socialLinksProp }: FooterProps) {
+export function Footer({ socialLinks }: FooterProps) {
   const t = useTranslations("footer");
   const year = new Date().getFullYear();
-  const socialLinks = { ...DEFAULT_SOCIAL_LINKS, ...socialLinksProp };
 
   return (
     <footer className="border-t border-line mt-auto">
@@ -61,16 +59,6 @@ export function Footer({ socialLinks: socialLinksProp }: FooterProps) {
                 className="action-link"
               >
                 Email
-              </a>
-            )}
-            {socialLinks.kakaoOpenChat && (
-              <a
-                href={socialLinks.kakaoOpenChat}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="action-link"
-              >
-                KakaoTalk
               </a>
             )}
           </div>

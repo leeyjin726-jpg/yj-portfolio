@@ -6,6 +6,8 @@ import { PortableText } from "@portabletext/react";
 import { getAboutPage, getSiteSettings } from "@/sanity/fetch";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { ConnectButtons } from "@/components/connect-buttons";
+import { DEFAULT_SOCIAL_LINKS } from "@/lib/contact-links";
 
 export async function generateMetadata({
   params,
@@ -143,6 +145,12 @@ async function AboutContent({
           </div>
         )}
 
+        <div className="mt-[100px] max-md:mt-16 pt-12 border-t border-line">
+          <ConnectButtons
+            email={settings?.socialLinks?.email ?? DEFAULT_SOCIAL_LINKS.email}
+            kakaoOpenChat={settings?.socialLinks?.kakaoOpenChat ?? DEFAULT_SOCIAL_LINKS.kakaoOpenChat}
+          />
+        </div>
       </main>
       <Footer socialLinks={settings?.socialLinks} />
     </>
