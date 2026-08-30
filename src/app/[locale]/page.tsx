@@ -76,7 +76,14 @@ async function HomeContent({
         <section className="max-w-[1280px] mx-auto px-[80px] max-md:px-10 pt-[120px] pb-[160px]">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-end">
             <h1 className="text-[clamp(56px,8vw,96px)] font-bold leading-[1.05] tracking-[-0.04em] text-foreground">
-              {t("hero_title")}
+              {t("hero_title")
+                .split("|")
+                .map((line, i, arr) => (
+                  <span key={i}>
+                    {line}
+                    {i < arr.length - 1 && <br />}
+                  </span>
+                ))}
             </h1>
             <div className="pb-2">
               <p className="text-[15px] text-softer leading-[1.7] mb-10 max-w-xs">
