@@ -6,6 +6,7 @@ import { getBlogPosts, getMagazines, getSiteSettings } from "@/sanity/fetch";
 import { urlFor } from "@/sanity/image";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { SectionTitle } from "@/components/section-title";
 
 export const metadata: Metadata = {
   title: "Content",
@@ -92,7 +93,10 @@ async function ContentIndexContent({
   return (
     <>
       <main className="flex-1 max-w-[1280px] mx-auto px-[80px] max-md:px-10 py-[120px]">
-        <p className="section-label text-softer mb-16">CONTENT</p>
+        <SectionTitle
+          word="CONTENT"
+          subtitle="가끔 제 생각을 긴 글로 풀어 쓰고 있습니다."
+        />
 
         {items.length === 0 ? (
           <p className="text-softer text-[15px]">준비 중입니다.</p>
