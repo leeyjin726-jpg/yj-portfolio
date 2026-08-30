@@ -68,6 +68,26 @@ async function DesignContent({
       <main className="flex-1 max-w-[1280px] mx-auto px-[80px] max-md:px-10 py-[120px]">
         <p className="section-label text-softer mb-16">{t("design_title")}</p>
 
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 pb-20 mb-20 border-b border-line">
+          <div>
+            <p className="section-label text-softer mb-8">운영 중인 사이트</p>
+            <div className="flex flex-col">
+              {OPERATING_SITES.map((site) => (
+                <ChannelLink key={site.url} {...site} actionLabel="Visit" />
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <p className="section-label text-softer mb-8">SNS</p>
+            <div className="flex flex-col">
+              {SNS_CHANNELS.map((channel) => (
+                <ChannelLink key={channel.url} {...channel} actionLabel="Instagram" />
+              ))}
+            </div>
+          </div>
+        </div>
+
         {items.length === 0 ? (
           <p className="text-softer text-[15px]">준비 중입니다.</p>
         ) : (
@@ -109,26 +129,6 @@ async function DesignContent({
             ))}
           </div>
         )}
-
-        <div className="mt-20 pt-12 border-t border-line grid grid-cols-1 md:grid-cols-2 gap-16">
-          <div>
-            <p className="section-label text-softer mb-8">운영 중인 사이트</p>
-            <div className="flex flex-col">
-              {OPERATING_SITES.map((site) => (
-                <ChannelLink key={site.url} {...site} actionLabel="Visit" />
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <p className="section-label text-softer mb-8">SNS</p>
-            <div className="flex flex-col">
-              {SNS_CHANNELS.map((channel) => (
-                <ChannelLink key={channel.url} {...channel} actionLabel="Instagram" />
-              ))}
-            </div>
-          </div>
-        </div>
       </main>
       <Footer socialLinks={settings?.socialLinks} />
     </>
