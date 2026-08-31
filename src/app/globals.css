@@ -181,57 +181,22 @@ hr {
 .card:hover .caption-category,
 .card[data-state="active"] .caption-category { color: var(--accent); }
 
+.content-card {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 28px;
+  transition: border-color 0.2s ease;
+}
+.content-card:hover, .content-card[data-state="active"] { border-color: var(--accent); }
+.content-card:hover .caption-title,
+.content-card[data-state="active"] .caption-title { color: var(--accent); }
+.content-card:hover .caption-category,
+.content-card[data-state="active"] .caption-category { color: var(--accent); }
+
 .divider-marker { display: flex; align-items: center; gap: 10px; }
 .divider-marker .line { flex: 1; height: 1px; background: var(--border); }
 .divider-marker .tick { width: 1.5px; height: 14px; background: var(--text-primary); }
 .divider-marker .dot  { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
-
-/* ── Magazine theme tones (per-scene color variation) ────── */
-.magazine-canvas {
-  --mag-fg: #1F2233;
-  --mag-fg-soft: #4D526A;
-  --mag-fg-faint: #8C92A6;
-  --mag-line: #8A91A5;
-  background: #C5CCDC;
-  color: var(--mag-fg);
-}
-
-.mag-scene[data-tone="lavender"] {
-  background: linear-gradient(135deg, #CDD3E2 0%, #B5BED2 100%);
-}
-.mag-scene[data-tone="sage"] {
-  background: linear-gradient(135deg, #CFD7C6 0%, #B5C0A8 100%);
-}
-.mag-scene[data-tone="sand"] {
-  background: linear-gradient(135deg, #E0D6C2 0%, #C9BC9F 100%);
-}
-.mag-scene[data-tone="slate"] {
-  background: linear-gradient(135deg, #C2C8D0 0%, #A4ABB7 100%);
-}
-.mag-scene[data-tone="peach"] {
-  background: linear-gradient(135deg, #E5CFC6 0%, #CDB1A6 100%);
-}
-
-.magazine-canvas .mag-fg { color: var(--mag-fg); }
-.magazine-canvas .mag-soft { color: var(--mag-fg-soft); }
-.magazine-canvas .mag-faint { color: var(--mag-fg-faint); }
-.magazine-canvas .mag-line-bg { background: var(--mag-line); }
-
-/* Scroll-driven scene entry animation
- * Uses CSS animation triggered when scene becomes the snap target.
- * Content stays visible by default; animation just adds a fade-up flourish on activation. */
-@keyframes mag-fade-up {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: none; }
-}
-.mag-scene[data-active="true"] .mag-scene-content > * {
-  animation: mag-fade-up 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
-}
-.mag-scene[data-active="true"] .mag-scene-content > *:nth-child(1) { animation-delay: 0.05s; }
-.mag-scene[data-active="true"] .mag-scene-content > *:nth-child(2) { animation-delay: 0.18s; }
-.mag-scene[data-active="true"] .mag-scene-content > *:nth-child(3) { animation-delay: 0.30s; }
-.mag-scene[data-active="true"] .mag-scene-content > *:nth-child(4) { animation-delay: 0.42s; }
-.mag-scene[data-active="true"] .mag-scene-content > *:nth-child(5) { animation-delay: 0.54s; }
 
 .font-serif-mixed {
   font-family: 'Cormorant Garamond', 'Noto Serif KR', 'Apple SD Gothic Neo', serif;

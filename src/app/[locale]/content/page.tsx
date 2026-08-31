@@ -38,7 +38,7 @@ export default function ContentIndexPage({
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[...Array(3)].map((_, i) => (
                 <div key={i}>
-                  <div className="aspect-[4/5] bg-raised rounded-[4px] mb-4" />
+                  <div className="aspect-[4/5] bg-raised rounded-[28px] mb-4" />
                   <div className="h-2 w-20 bg-raised rounded mb-2" />
                   <div className="h-4 bg-raised rounded w-2/3" />
                 </div>
@@ -107,7 +107,7 @@ async function ContentIndexContent({
                 key={item.id}
                 href={`/${item.type}/${item.slug}`}
                 aria-label={`${item.title?.[locale] ?? ""} 보기`}
-                className="card group overflow-hidden block"
+                className="content-card group overflow-hidden block"
               >
                 {item.coverImage ? (
                   <div className="aspect-[4/5] overflow-hidden">
@@ -122,11 +122,12 @@ async function ContentIndexContent({
                 ) : (
                   <div className="aspect-[4/5] bg-raised" />
                 )}
-                <div className="px-5 py-6">
+                <div className="px-1 py-4">
                   <figcaption className="caption">
                     <h2 className="caption-title !text-[19px] group-hover:text-accent transition-colors">
                       {item.title?.[locale]}
                     </h2>
+                    <p className="caption-category">{item.badge}</p>
                     {item.summary?.[locale] && (
                       <p className="caption-meta line-clamp-2">
                         {item.summary[locale]}

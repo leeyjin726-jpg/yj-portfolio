@@ -1,39 +1,18 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
-
-type Tone = "lavender" | "sage" | "sand" | "slate" | "peach";
+import { Link } from "@/i18n/navigation";
 
 type Scene = {
   _key?: string;
   title?: string;
   subtitle?: string;
   body?: string;
-  tone?: Tone;
 };
 
 type Props = {
   seriesLabel: string;
   publishedAt?: string;
   scenes: Scene[];
-  brand?: string;
-  handle?: string;
+  backLabel: string;
 };
-
-const ROMAN = [
-  "i.",
-  "ii.",
-  "iii.",
-  "iv.",
-  "v.",
-  "vi.",
-  "vii.",
-  "viii.",
-  "ix.",
-  "x.",
-  "xi.",
-  "xii.",
-];
 
 function formatDate(iso?: string) {
   if (!iso) return "";
@@ -43,125 +22,70 @@ function formatDate(iso?: string) {
   return `${month}. ${year}`;
 }
 
-export function MagazineViewer({
-  seriesLabel,
-  publishedAt,
-  scenes,
-  brand = "ttiyong.mag",
-  handle = "@ttiyong.art",
-}: Props) {
-  const total = scenes.length;
-  const [active, setActive] = useState(0);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const sectionRefs = useRef<(HTMLElement | null)[]>([]);
-
-  useEffect(() => {
-    const root = containerRef.current;
-    if (!root) return;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-        if (visible[0]) {
-          const idx = sectionRefs.current.findIndex(
-            (el) => el === visible[0].target
-          );
-          if (idx !== -1) setActive(idx);
-        }
-      },
-      { root, threshold: [0.4, 0.6, 0.8] }
-    );
-    sectionRefs.current.forEach((el) => el && observer.observe(el));
-    return () => observer.disconnect();
-  }, [scenes.length]);
-
-  const scrollTo = (idx: number) => {
-    sectionRefs.current[idx]?.scrollIntoView({ behavior: "smooth" });
-  };
-
+export function MagazineViewer({ seriesLabel, publishedAt, scenes, backLabel }: Props) {
+  const [hero, ...rest] = scenes;
   const dateLabel = formatDate(publishedAt);
-  const pad = (n: number) => String(n).padStart(2, "0");
 
   return (
-    <div
-      ref={containerRef}
-      className="magazine-canvas snap-y snap-mandatory overflow-y-scroll h-[calc(100vh-3.5rem)]"
-    >
-      {/* Right-side dot indicators */}
-      <nav
-        aria-label="Scenes"
-        className="fixed right-6 top-1/2 -translate-y-1/2 z-30 flex flex-col gap-3 max-md:right-3"
-      >
-        {scenes.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => scrollTo(i)}
-            aria-label={`Scene ${i + 1}`}
-            aria-current={active === i}
-            className={`w-2 h-2 rounded-full transition-all mag-line-bg ${
-              active === i ? "scale-150 opacity-100" : "opacity-40 hover:opacity-70"
-            }`}
-          />
-        ))}
-      </nav>
+    <article className="max-w-[860px] mx-auto px-[80px] max-md:px-10 py-[120px]">
+      <Link href="/content" className="action-link inline-block mb-16">
+        ← {backLabel}
+      </Link>
 
-      {scenes.map((scene, i) => (
+      <p className="caption-category mb-4">
+        {seriesLabel}
+        {dateLabel && <> · {dateLabel}</>}
+      </p>
+
+      {hero?.title && (
+        <h1 className="text-[clamp(32px,5vw,48px)] font-bold leading-[1.15] tracking-[-0.02em] text-foreground mb-4">
+          {hero.title}
+        </h1>
+      )}
+
+      {hero?.subtitle && (
+        <p className="font-serif-mixed italic text-[18px] text-softer mb-12 leading-[1.5]">
+          {hero.subtitle}
+        </p>
+      )}
+
+      {hero?.body && (
+        <p className="text-[16px] leading-[1.9] text-softer whitespace-pre-line mb-12">
+          {hero.body}
+        </p>
+      )}
+
+      <div className="divider-marker mb-16">
+        <span className="line" />
+        <span className="tick" />
+        <span className="dot" />
+        <span className="line" />
+      </div>
+
+      {rest.map((scene, i) => (
         <section
           key={scene._key ?? i}
-          ref={(el) => {
-            sectionRefs.current[i] = el;
-          }}
-          data-tone={scene.tone ?? "lavender"}
-          data-active={active === i}
-          className="mag-scene snap-start h-[calc(100vh-3.5rem)] flex flex-col relative px-[80px] max-md:px-10 py-12 transition-[background] duration-700"
+          className={i > 0 ? "pt-12 mt-12 border-t border-line" : ""}
         >
-          {/* Top bar */}
-          <div className="flex items-start justify-between text-[12px] mag-soft">
-            <span>{seriesLabel}</span>
-            <span>
-              {pad(i + 1)} / {pad(total)}
-              {dateLabel && <> · {dateLabel}</>}
-            </span>
-          </div>
+          {scene.title && (
+            <h2 className="text-[clamp(22px,3vw,30px)] font-bold leading-[1.3] tracking-[-0.02em] text-foreground mb-3">
+              {scene.title}
+            </h2>
+          )}
 
-          {/* Center content */}
-          <div className="mag-scene-content flex-1 flex flex-col items-center justify-center text-center max-w-[600px] mx-auto w-full">
-            <p className="font-serif-mixed italic text-[16px] mag-soft mb-8 tracking-[0.18em]">
-              scene {ROMAN[i] ?? `${i + 1}.`}
+          {scene.subtitle && (
+            <p className="font-serif-mixed italic text-[15px] text-softer mb-6">
+              {scene.subtitle}
             </p>
+          )}
 
-            {scene.title && (
-              <h2 className="text-[clamp(32px,4.5vw,56px)] font-bold leading-[1.15] tracking-[-0.02em] mb-6 mag-fg text-balance max-w-full">
-                {scene.title}
-              </h2>
-            )}
-
-            {scene.subtitle && (
-              <p className="font-serif-mixed italic text-[clamp(18px,2vw,22px)] mag-fg mb-8 text-balance max-w-full leading-[1.4]">
-                {scene.subtitle}
-              </p>
-            )}
-
-            <span className="block w-12 h-px mag-line-bg mb-8 opacity-60" />
-
-            {scene.body && (
-              <p className="text-[16px] leading-[1.9] mag-soft w-full whitespace-pre-line text-left">
-                {scene.body}
-              </p>
-            )}
-          </div>
-
-          {/* Bottom bar */}
-          <div className="flex items-end justify-between text-[12px] mag-soft">
-            <span>{brand}</span>
-            <span>
-              {pad(i + 1)} / {pad(total)}
-            </span>
-            <span>{handle}</span>
-          </div>
+          {scene.body && (
+            <p className="text-[16px] leading-[1.9] text-softer whitespace-pre-line">
+              {scene.body}
+            </p>
+          )}
         </section>
       ))}
-    </div>
+    </article>
   );
 }
