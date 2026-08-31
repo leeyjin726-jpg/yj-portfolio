@@ -184,7 +184,7 @@ hr {
 .content-card {
   background: transparent;
   border: 1px solid transparent;
-  border-radius: 28px;
+  border-radius: 14px;
   transition: border-color 0.2s ease;
 }
 .content-card:hover, .content-card[data-state="active"] { border-color: var(--accent); }

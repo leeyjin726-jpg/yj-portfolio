@@ -38,7 +38,7 @@ export default function ContentIndexPage({
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[...Array(3)].map((_, i) => (
                 <div key={i}>
-                  <div className="aspect-[4/5] bg-raised rounded-[28px] mb-4" />
+                  <div className="aspect-[4/5] bg-raised rounded-[14px] mb-4" />
                   <div className="h-2 w-20 bg-raised rounded mb-2" />
                   <div className="h-4 bg-raised rounded w-2/3" />
                 </div>
