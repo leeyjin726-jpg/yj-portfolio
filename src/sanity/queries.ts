@@ -49,7 +49,13 @@ export const portfolioItemBySlugQuery = groq`
     "slug": slug.current,
     category,
     description,
-    coverImage,
+    coverImage{
+      alt,
+      caption,
+      hotspot,
+      crop,
+      "asset": asset->{ _id, url, metadata { dimensions } }
+    },
     "galleryImages": galleryImages[defined(asset)]{
       _key,
       alt,

@@ -8,6 +8,7 @@ import { getPortfolioItemBySlug, getPortfolioItemSlugs, getSiteSettings } from "
 import { urlFor } from "@/sanity/image";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { CaseStudyGallery } from "@/components/portfolio/case-study-gallery";
 
 export async function generateStaticParams() {
   const slugs = await getPortfolioItemSlugs();
@@ -166,14 +167,21 @@ async function PortfolioDetailContent({
         </section>
 
         {/* ── Cover Image ────────────────────────────────────── */}
-        {item.coverImage && (
+        {item.coverImage?.asset?.url && (
           <div className="max-w-[1200px] mx-auto px-[80px] max-md:px-10 mb-[80px]">
-            <div className="aspect-[16/9] overflow-hidden rounded-[4px]">
+            <div
+              className="overflow-hidden rounded-[4px]"
+              style={{
+                aspectRatio: `${item.coverImage.asset.metadata?.dimensions?.width ?? 1200} / ${
+                  item.coverImage.asset.metadata?.dimensions?.height ?? 675
+                }`,
+              }}
+            >
               <Image
-                src={urlFor(item.coverImage).width(1200).height(675).url()}
+                src={item.coverImage.asset.url}
                 alt={item.title?.[locale] ?? ""}
-                width={1200}
-                height={675}
+                width={item.coverImage.asset.metadata?.dimensions?.width ?? 1200}
+                height={item.coverImage.asset.metadata?.dimensions?.height ?? 675}
                 className="w-full h-full object-cover"
                 priority
               />
@@ -182,38 +190,11 @@ async function PortfolioDetailContent({
         )}
 
         {/* ── Gallery Images ─────────────────────────────────── */}
-        {/* Single-column vertical stack (default).
-            Future 2-col option: replace `flex flex-col` with
-            `grid grid-cols-2` and add `gap-x-6` to the wrapper. */}
+        {/* Rows are laid out by native aspect ratio: portrait images
+            pair up two-per-row, everything else spans full width.
+            See src/components/portfolio/case-study-gallery.tsx */}
         {item.galleryImages?.length > 0 && (
-          <div className="max-w-[1200px] mx-auto px-[80px] max-md:px-10 mb-[80px]">
-            <div className="flex flex-col gap-[80px] max-md:gap-[60px]">
-              {item.galleryImages.map((image: any, index: number) => {
-                if (!image?.asset) return null;
-                const src: string = image.asset.url ?? "";
-                if (!src) return null;
-                return (
-                  <figure key={image._key ?? index}>
-                    <div className="aspect-[16/9] overflow-hidden rounded-[4px]">
-                      <Image
-                        src={src}
-                        alt={image.alt ?? ""}
-                        width={image.asset.metadata?.dimensions?.width ?? 1200}
-                        height={image.asset.metadata?.dimensions?.height ?? 675}
-                        priority={index === 0}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    {image.caption && (
-                      <figcaption className="caption mt-4">
-                        <p className="caption-meta">{image.caption}</p>
-                      </figcaption>
-                    )}
-                  </figure>
-                );
-              })}
-            </div>
-          </div>
+          <CaseStudyGallery images={item.galleryImages} />
         )}
 
         {/* ── Divider ────────────────────────────────────────── */}
