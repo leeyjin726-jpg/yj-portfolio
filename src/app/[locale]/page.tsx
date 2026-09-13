@@ -164,13 +164,28 @@ async function HomeContent({
                     className={`w-full h-full object-contain ${site.invert ? "brightness-0 invert" : ""}`}
                   />
                 </div>
-                <div className="p-4">
+                <div className="p-4 flex items-center justify-between gap-4">
                   <figcaption className="caption">
                     <h3 className="caption-title group-hover:text-accent transition-colors">
                       {site.name}
                     </h3>
                     <p className="caption-meta">{site.domain}</p>
                   </figcaption>
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    className="flex-shrink-0 text-softer group-hover:text-accent group-hover:translate-x-1 transition-all"
+                  >
+                    <path
+                      d="M9 6l6 6-6 6"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
                 </div>
               </a>
             ))}
