@@ -163,9 +163,6 @@ async function HomeContent({
                     height={260}
                     className={`w-full h-full object-contain ${site.invert ? "brightness-0 invert" : ""}`}
                   />
-                  <span className="pill absolute top-4 right-4 uppercase tracking-[0.15em] text-[11px]">
-                    Visit
-                  </span>
                 </div>
                 <div className="p-4">
                   <figcaption className="caption">
