@@ -13,7 +13,7 @@ export function Header() {
   const navLinks = [
     { href: "/about", label: "About" },
     { href: "/work/design", label: "Portfolio" },
-    { href: "/content", label: "Content" },
+    { href: "/content", label: "Article" },
     { href: "/shop", label: "Shop" },
     { href: "/contact", label: "Contact" },
   ];

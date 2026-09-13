@@ -9,7 +9,7 @@ import { Footer } from "@/components/layout/footer";
 import { SectionTitle } from "@/components/section-title";
 
 export const metadata: Metadata = {
-  title: "Content",
+  title: "Article",
 };
 
 type ContentItem = {
@@ -94,7 +94,7 @@ async function ContentIndexContent({
     <>
       <main className="flex-1 max-w-[1280px] mx-auto px-[80px] max-md:px-10 py-[120px]">
         <SectionTitle
-          word="CONTENT"
+          word="ARTICLE"
           subtitle="가끔 제 생각을 긴 글로 풀어 쓰고 있습니다."
         />
 

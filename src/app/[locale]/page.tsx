@@ -9,6 +9,33 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { HomeStory } from "@/components/home-story";
 
+const OPERATING_SITES = [
+  {
+    name: "SUPPL MAGAZINE",
+    domain: "suppl.kr",
+    url: "https://suppl.kr",
+    logo: "/sites/suppl.png",
+    bg: "#FFFFFF",
+    invert: false,
+  },
+  {
+    name: "런웨이성수",
+    domain: "runwayseongsu.com",
+    url: "https://runwayseongsu.com",
+    logo: "/sites/runway-seongsu.png",
+    bg: "#FFFFFF",
+    invert: false,
+  },
+  {
+    name: "작가의 정원",
+    domain: "writergarden.kr",
+    url: "https://writergarden.kr",
+    logo: "/sites/writergarden.png",
+    bg: "#0494A3",
+    invert: true,
+  },
+] as const;
+
 export async function generateMetadata({
   params,
 }: {
@@ -109,6 +136,49 @@ async function HomeContent({
 
         {/* Story */}
         <HomeStory />
+
+        {/* Operating Sites */}
+        <section className="max-w-[1280px] mx-auto px-[80px] max-md:px-10 py-[120px] border-t border-line">
+          <p className="section-label text-softer mb-4">{t("operating_sites")}</p>
+          <p className="text-[15px] text-softer mb-12 max-w-md">
+            {t("operating_sites_subtitle")}
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {OPERATING_SITES.map((site) => (
+              <a
+                key={site.domain}
+                href={site.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="content-card group overflow-hidden block"
+              >
+                <div
+                  className="aspect-square relative flex items-center justify-center p-14 max-md:p-10"
+                  style={{ background: site.bg }}
+                >
+                  <Image
+                    src={site.logo}
+                    alt={site.name}
+                    width={260}
+                    height={260}
+                    className={`w-full h-full object-contain ${site.invert ? "brightness-0 invert" : ""}`}
+                  />
+                  <span className="pill absolute top-4 right-4 uppercase tracking-[0.15em] text-[11px]">
+                    Visit
+                  </span>
+                </div>
+                <div className="p-4">
+                  <figcaption className="caption">
+                    <h3 className="caption-title group-hover:text-accent transition-colors">
+                      {site.name}
+                    </h3>
+                    <p className="caption-meta">{site.domain}</p>
+                  </figcaption>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
 
         {/* Featured Work */}
         {portfolio.length > 0 && (

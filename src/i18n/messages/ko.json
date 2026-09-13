@@ -14,7 +14,9 @@
     "hero_subtitle": "브랜드를 만들고 이야기를 전하는 중입니다",
     "cta": "About",
     "featured_work": "주요 작업",
-    "latest_posts": "최근 글"
+    "latest_posts": "최근 글",
+    "operating_sites": "운영 중인 사이트",
+    "operating_sites_subtitle": "현재 운영 중이거나 맡아서 진행 중인 프로젝트와 채널들을 소개합니다."
   },
   "about": {
     "title": "소개"
