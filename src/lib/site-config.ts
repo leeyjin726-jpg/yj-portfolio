@@ -7,7 +7,7 @@ export const SITE_NAME = "TTIYONG.ART";
 /** Search-engine ownership tokens (public by design — they are rendered into <head>). */
 export const SITE_VERIFICATION = {
   google: "xMwNgQc2dRnUmcCcXZz9GQmwYoHbStnULfmXBtSRxLA",
-  naver: "",
+  naver: "8c6f44fb040b188c8fc305e016c0941545a885cc",
 };
 
 export const PERSON = {
