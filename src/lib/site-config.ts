@@ -4,6 +4,12 @@ export const SITE_URL = (process.env.NEXT_PUBLIC_BASE_URL ?? "https://ttiyong.ar
 
 export const SITE_NAME = "TTIYONG.ART";
 
+/** Search-engine ownership tokens (public by design — they are rendered into <head>). */
+export const SITE_VERIFICATION = {
+  google: "xMwNgQc2dRnUmcCcXZz9GQmwYoHbStnULfmXBtSRxLA",
+  naver: "",
+};
+
 export const PERSON = {
   name: { ko: "이용진", en: "Yongjin Lee" },
   jobTitles: ["브랜드 디자이너", "브랜드 빌더", "에디터", "Brand Designer", "Editor"],

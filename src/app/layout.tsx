@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
-import { SEO_COPY, SITE_NAME, SITE_URL } from "@/lib/site-config";
+import { SEO_COPY, SITE_NAME, SITE_URL, SITE_VERIFICATION } from "@/lib/site-config";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -10,9 +10,9 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 const verification: Metadata["verification"] = {
-  google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
-  other: process.env.NEXT_PUBLIC_NAVER_SITE_VERIFICATION
-    ? { "naver-site-verification": process.env.NEXT_PUBLIC_NAVER_SITE_VERIFICATION }
+  google: SITE_VERIFICATION.google || undefined,
+  other: SITE_VERIFICATION.naver
+    ? { "naver-site-verification": SITE_VERIFICATION.naver }
     : undefined,
 };
 
