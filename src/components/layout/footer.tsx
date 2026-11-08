@@ -1,5 +1,9 @@
 import { useTranslations } from "next-intl";
 import { PERSON, PROFILE_LINKS } from "@/lib/site-config";
+import { FooterIcon } from "@/components/layout/footer-icons";
+
+const ICON_LINK =
+  "inline-flex items-center justify-center w-9 h-9 -m-2 text-softer hover:text-accent transition-colors";
 
 interface FooterProps {
   socialLinks?: {
@@ -23,26 +27,30 @@ export function Footer({ socialLinks }: FooterProps) {
             © {year} TTIYONG.ART · {t("rights")}
           </p>
 
-          <div className="flex flex-wrap items-center gap-6">
+          <div className="flex flex-wrap items-center gap-5">
             <a
               href={`mailto:${PERSON.email}`}
-              className="text-[13px] text-softer hover:text-accent transition-colors"
+              aria-label={`Email ${PERSON.email}`}
+              title={PERSON.email}
+              className={ICON_LINK}
             >
-              {PERSON.email}
+              <FooterIcon name="email" className="w-5 h-5" />
             </a>
-            {(socialLinks || PROFILE_LINKS.length > 0) && (
+            {PROFILE_LINKS.map((profile) => (
+              <a
+                key={profile.url}
+                href={profile.url}
+                target="_blank"
+                rel="noopener noreferrer me"
+                aria-label={profile.label}
+                title={profile.label}
+                className={ICON_LINK}
+              >
+                <FooterIcon name={profile.icon} className={profile.icon === "notefolio" ? "w-5 h-5" : "w-[18px] h-[18px]"} />
+              </a>
+            ))}
+            {socialLinks && (
               <>
-                {PROFILE_LINKS.map((profile) => (
-                  <a
-                    key={profile.url}
-                    href={profile.url}
-                    target="_blank"
-                    rel="noopener noreferrer me"
-                    className="action-link"
-                  >
-                    {profile.label}
-                  </a>
-                ))}
                 {socialLinks?.instagram && (
                   <a
                     href={socialLinks.instagram}

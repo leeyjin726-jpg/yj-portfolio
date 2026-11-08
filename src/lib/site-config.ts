@@ -38,6 +38,7 @@ export function seoCopy(locale: string) {
  * search engines (JSON-LD sameAs) so they link back to this site.
  * Add an entry here when a profile URL is ready.
  */
-export const PROFILE_LINKS: { label: string; url: string }[] = [
-  { label: "Notefolio", url: "https://notefolio.net/ttiyong.art" },
+export const PROFILE_LINKS: { label: string; url: string; icon: "linkedin" | "notefolio" }[] = [
+  { label: "LinkedIn", url: "https://www.linkedin.com/in/ttiyong", icon: "linkedin" },
+  { label: "Notefolio", url: "https://notefolio.net/ttiyong.art", icon: "notefolio" },
 ];
