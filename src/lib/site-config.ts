@@ -12,7 +12,7 @@ export const SITE_VERIFICATION = {
 
 export const PERSON = {
   name: { ko: "이용진", en: "Yongjin Lee" },
-  jobTitles: ["브랜드 디자이너", "브랜드 빌더", "에디터", "Brand Designer", "Editor"],
+  jobTitles: ["브랜드 디자이너", "브랜드 빌더", "에디터", "AI 콘텐츠 크리에이터", "Brand Designer", "Editor", "AI Content Creator"],
   email: "leeyjin726@naver.com",
 } as const;
 
@@ -20,12 +20,12 @@ export const SEO_COPY: Record<"ko" | "en", { title: string; description: string 
   ko: {
     title: "이용진 · 브랜드 디자이너 & 에디터 | TTIYONG.ART",
     description:
-      "브랜드의 본질을 읽고 시각으로 설계하는 글 쓰는 디자이너 이용진의 포트폴리오. 로고·BI 디자인, 브랜드 빌딩, 에디토리얼 작업. 프리랜서 프로젝트 의뢰와 협업 제안을 받고 있습니다.",
+      "브랜드의 본질을 읽고 시각으로 설계하는 글 쓰는 디자이너 이용진의 포트폴리오. 로고·BI 디자인, 브랜드 빌딩, AI를 활용한 콘텐츠 제작, 에디토리얼 작업. 프리랜서 프로젝트 의뢰와 협업 제안을 받고 있습니다.",
   },
   en: {
     title: "Yongjin Lee · Brand Designer & Editor | TTIYONG.ART",
     description:
-      "Portfolio of Yongjin Lee, a writing brand designer who reads a brand's essence and shapes it visually. Logo & BI design, brand building, and editorial work. Open to freelance projects and collaborations.",
+      "Portfolio of Yongjin Lee, a writing brand designer who reads a brand's essence and shapes it visually. Logo & BI design, brand building, AI-assisted content production, and editorial work. Open to freelance projects and collaborations.",
   },
 };
 
