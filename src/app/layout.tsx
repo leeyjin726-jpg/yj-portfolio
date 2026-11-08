@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
-import { SEO_COPY, SITE_NAME, SITE_URL, SITE_VERIFICATION } from "@/lib/site-config";
+import { OG_IMAGE, SEO_COPY, SITE_NAME, SITE_URL, SITE_VERIFICATION } from "@/lib/site-config";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -21,7 +21,13 @@ export const metadata: Metadata = {
   title: { default: SEO_COPY.ko.title, template: `%s | ${SITE_NAME}` },
   description: SEO_COPY.ko.description,
   applicationName: SITE_NAME,
-  openGraph: { siteName: SITE_NAME, type: "website", locale: "ko_KR" },
+  openGraph: {
+    siteName: SITE_NAME,
+    type: "website",
+    locale: "ko_KR",
+    images: [OG_IMAGE],
+  },
+  twitter: { card: "summary_large_image", images: [OG_IMAGE.url] },
   verification,
 };
 

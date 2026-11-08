@@ -4,6 +4,9 @@ export const SITE_URL = (process.env.NEXT_PUBLIC_BASE_URL ?? "https://ttiyong.ar
 
 export const SITE_NAME = "TTIYONG.ART";
 
+/** Link-preview image (KakaoTalk, Slack, social). 1200x630. */
+export const OG_IMAGE = { url: "/og-image.png", width: 1200, height: 630, alt: "TTIYONG.ART" };
+
 /** Search-engine ownership tokens (public by design — they are rendered into <head>). */
 export const SITE_VERIFICATION = {
   google: "xMwNgQc2dRnUmcCcXZz9GQmwYoHbStnULfmXBtSRxLA",

@@ -10,7 +10,7 @@ import { Footer } from "@/components/layout/footer";
 import { HomeStory } from "@/components/home-story";
 import { HomeArticles } from "@/components/home-articles";
 import { PersonJsonLd } from "@/components/person-json-ld";
-import { seoCopy } from "@/lib/site-config";
+import { OG_IMAGE, SITE_NAME, seoCopy } from "@/lib/site-config";
 
 const OPERATING_SITES = [
   {
@@ -51,7 +51,15 @@ export async function generateMetadata({
     title: { absolute: title },
     description,
     alternates: { canonical: locale === "en" ? "/en" : "/", languages: { ko: "/", en: "/en" } },
-    openGraph: { title, description, url: locale === "en" ? "/en" : "/" },
+    openGraph: {
+      title: SITE_NAME,
+      description,
+      url: locale === "en" ? "/en" : "/",
+      siteName: SITE_NAME,
+      type: "website",
+      images: [OG_IMAGE],
+    },
+    twitter: { card: "summary_large_image", title: SITE_NAME, description, images: [OG_IMAGE.url] },
   };
 }
 
