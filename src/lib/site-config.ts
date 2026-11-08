@@ -39,5 +39,5 @@ export function seoCopy(locale: string) {
  * Add an entry here when a profile URL is ready.
  */
 export const PROFILE_LINKS: { label: string; url: string }[] = [
-  { label: "Notefolio", url: "https://notefolio.net/leeyjin726" },
+  { label: "Notefolio", url: "https://notefolio.net/ttiyong.art" },
 ];
