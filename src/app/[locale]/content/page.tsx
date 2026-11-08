@@ -7,21 +7,12 @@ import { urlFor } from "@/sanity/image";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { SectionTitle } from "@/components/section-title";
+import { buildArticleItems } from "@/lib/article-items";
 
 export const metadata: Metadata = {
   title: "Article",
 };
 
-type ContentItem = {
-  id: string;
-  type: "blog" | "magazine";
-  slug: string;
-  title: Record<string, string>;
-  summary?: Record<string, string>;
-  coverImage: unknown;
-  publishedAt: string;
-  badge: string;
-};
 
 export default function ContentIndexPage({
   params,
@@ -65,30 +56,7 @@ async function ContentIndexContent({
     getSiteSettings(),
   ]);
 
-  const items: ContentItem[] = [
-    ...posts.map((post: any) => ({
-      id: post._id,
-      type: "blog" as const,
-      slug: post.slug?.current,
-      title: post.title,
-      summary: post.excerpt,
-      coverImage: post.coverImage,
-      publishedAt: post.publishedAt,
-      badge: "BLOG",
-    })),
-    ...magazines.map((mag: any) => ({
-      id: mag._id,
-      type: "magazine" as const,
-      slug: mag.slug,
-      title: mag.title,
-      summary: mag.description,
-      coverImage: mag.coverImage,
-      publishedAt: mag.publishedAt,
-      badge: mag.seriesLabel ?? "MAGAZINE",
-    })),
-  ].sort(
-    (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
-  );
+  const items = buildArticleItems(posts, magazines);
 
   return (
     <>

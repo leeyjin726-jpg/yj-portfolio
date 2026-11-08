@@ -3,11 +3,12 @@ import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import type { Metadata } from "next";
-import { getFeaturedPortfolio, getLatestBlogPosts, getSiteSettings } from "@/sanity/fetch";
+import { getFeaturedPortfolio, getSiteSettings } from "@/sanity/fetch";
 import { urlFor } from "@/sanity/image";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { HomeStory } from "@/components/home-story";
+import { HomeArticles } from "@/components/home-articles";
 
 const OPERATING_SITES = [
   {
@@ -89,11 +90,9 @@ async function HomeContent({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "home" });
-  const navT = await getTranslations({ locale, namespace: "nav" });
 
-  const [portfolio, latestPosts, settings] = await Promise.all([
+  const [portfolio, settings] = await Promise.all([
     getFeaturedPortfolio(),
-    getLatestBlogPosts(),
     getSiteSettings(),
   ]);
 
@@ -138,7 +137,7 @@ async function HomeContent({
         <HomeStory />
 
         {/* Operating Sites */}
-        <section className="max-w-[1280px] mx-auto px-[80px] max-md:px-10 py-[120px] border-t border-line">
+        <section className="max-w-[1280px] mx-auto px-[80px] max-md:px-10 pt-[120px] pb-[96px] border-t border-line">
           <p className="section-label text-softer mb-4">{t("operating_sites")}</p>
           <p className="text-[15px] text-softer mb-12 max-w-md">
             {t("operating_sites_subtitle")}
@@ -194,7 +193,7 @@ async function HomeContent({
 
         {/* Featured Work */}
         {portfolio.length > 0 && (
-          <section className="max-w-[1280px] mx-auto px-[80px] max-md:px-10 py-[120px]">
+          <section className="max-w-[1280px] mx-auto px-[80px] max-md:px-10 pt-[96px] pb-[120px]">
             <p className="section-label text-softer mb-12">{t("featured_work")}</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {portfolio.slice(0, 3).map((item: any, i: number) => (
@@ -235,44 +234,8 @@ async function HomeContent({
           </section>
         )}
 
-        {/* Latest Blog Posts */}
-        {latestPosts.length > 0 && (
-          <section className="max-w-[1280px] mx-auto px-[80px] max-md:px-10 py-[120px] border-t border-line">
-            <p className="section-label text-softer mb-12">{t("latest_posts")}</p>
-            <div className="space-y-8">
-              {latestPosts.map((post: any) => (
-                <article
-                  key={post._id}
-                  className="border-b border-line pb-8 last:border-none last:pb-0"
-                >
-                  <Link
-                    href={`/blog/${post.slug?.current}`}
-                    className="group block"
-                  >
-                    <time className="caption-category">
-                      {post.publishedAt
-                        ? new Date(post.publishedAt).toLocaleDateString(
-                            locale === "ko" ? "ko-KR" : "en-US"
-                          )
-                        : ""}
-                    </time>
-                    <h3 className="text-[17px] font-medium text-foreground group-hover:text-accent transition-colors mt-2">
-                      {post.title?.[locale]}
-                    </h3>
-                    {post.excerpt?.[locale] && (
-                      <p className="text-[14px] text-softer mt-2 line-clamp-2">
-                        {post.excerpt[locale]}
-                      </p>
-                    )}
-                  </Link>
-                </article>
-              ))}
-            </div>
-            <Link href="/content" className="button-outline mt-10">
-              {navT("blog")}
-            </Link>
-          </section>
-        )}
+        {/* Articles */}
+        <HomeArticles locale={locale} />
       </main>
       <Footer socialLinks={settings?.socialLinks} />
     </>
