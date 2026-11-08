@@ -9,6 +9,8 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { HomeStory } from "@/components/home-story";
 import { HomeArticles } from "@/components/home-articles";
+import { PersonJsonLd } from "@/components/person-json-ld";
+import { seoCopy } from "@/lib/site-config";
 
 const OPERATING_SITES = [
   {
@@ -43,18 +45,13 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const settings = await getSiteSettings();
+  const { title, description } = seoCopy(locale);
 
   return {
-    title: settings?.title?.[locale] ?? "YJ Portfolio",
-    description: settings?.description?.[locale] ?? "Designer & Content Creator",
-    openGraph: {
-      title: settings?.title?.[locale],
-      description: settings?.description?.[locale],
-      images: settings?.profileImage
-        ? [urlFor(settings.profileImage).width(1200).height(630).url()]
-        : [],
-    },
+    title: { absolute: title },
+    description,
+    alternates: { canonical: locale === "en" ? "/en" : "/", languages: { ko: "/", en: "/en" } },
+    openGraph: { title, description, url: locale === "en" ? "/en" : "/" },
   };
 }
 
@@ -98,6 +95,7 @@ async function HomeContent({
 
   return (
     <>
+      <PersonJsonLd locale={locale} />
       <main className="flex-1">
         {/* Hero */}
         <section className="max-w-[1280px] mx-auto px-[80px] max-md:px-10 pt-[120px] pb-[160px]">

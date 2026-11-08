@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import { PROFILE_LINKS } from "@/lib/site-config";
 
 interface FooterProps {
   socialLinks?: {
@@ -21,9 +22,20 @@ export function Footer({ socialLinks }: FooterProps) {
           © {year} TTIYONG.ART · {t("rights")}
         </p>
 
-        {socialLinks && (
-          <div className="flex items-center gap-6">
-            {socialLinks.instagram && (
+        {(socialLinks || PROFILE_LINKS.length > 0) && (
+          <div className="flex flex-wrap items-center gap-6">
+            {PROFILE_LINKS.map((profile) => (
+              <a
+                key={profile.url}
+                href={profile.url}
+                target="_blank"
+                rel="noopener noreferrer me"
+                className="action-link"
+              >
+                {profile.label}
+              </a>
+            ))}
+            {socialLinks?.instagram && (
               <a
                 href={socialLinks.instagram}
                 target="_blank"
@@ -33,7 +45,7 @@ export function Footer({ socialLinks }: FooterProps) {
                 Instagram
               </a>
             )}
-            {socialLinks.linkedin && (
+            {socialLinks?.linkedin && (
               <a
                 href={socialLinks.linkedin}
                 target="_blank"
@@ -43,7 +55,7 @@ export function Footer({ socialLinks }: FooterProps) {
                 LinkedIn
               </a>
             )}
-            {socialLinks.github && (
+            {socialLinks?.github && (
               <a
                 href={socialLinks.github}
                 target="_blank"
@@ -53,7 +65,7 @@ export function Footer({ socialLinks }: FooterProps) {
                 GitHub
               </a>
             )}
-            {socialLinks.email && (
+            {socialLinks?.email && (
               <a
                 href={`mailto:${socialLinks.email}`}
                 className="action-link"

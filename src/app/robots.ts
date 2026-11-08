@@ -1,6 +1,5 @@
 import { MetadataRoute } from "next";
-
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "https://yj-portfolio-tau.vercel.app";
+import { SITE_URL } from "@/lib/site-config";
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -9,6 +8,7 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/studio", "/studio/", "/api/"],
     },
-    sitemap: `${baseUrl}/sitemap.xml`,
+    sitemap: `${SITE_URL}/sitemap.xml`,
+    host: SITE_URL,
   };
 }
