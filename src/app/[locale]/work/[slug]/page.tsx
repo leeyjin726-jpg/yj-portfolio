@@ -9,6 +9,7 @@ import { urlFor } from "@/sanity/image";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { CaseStudyGallery } from "@/components/portfolio/case-study-gallery";
+import { CaseStudyVideos } from "@/components/portfolio/case-study-videos";
 
 export async function generateStaticParams() {
   const slugs = await getPortfolioItemSlugs();
@@ -188,6 +189,9 @@ async function PortfolioDetailContent({
             </div>
           </div>
         )}
+
+        {/* ── Videos ─────────────────────────────────────────── */}
+        {item.videos?.length > 0 && <CaseStudyVideos videos={item.videos} />}
 
         {/* ── Gallery Images ─────────────────────────────────── */}
         {/* Rows are laid out by native aspect ratio: portrait images

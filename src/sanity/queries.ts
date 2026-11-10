@@ -64,6 +64,12 @@ export const portfolioItemBySlugQuery = groq`
       crop,
       "asset": asset->{ _id, url, metadata { dimensions } }
     },
+    "videos": videos[defined(file.asset)]{
+      _key,
+      caption,
+      "url": file.asset->url,
+      "poster": poster.asset->{ url, metadata { dimensions } }
+    },
     client,
     year,
     tags,

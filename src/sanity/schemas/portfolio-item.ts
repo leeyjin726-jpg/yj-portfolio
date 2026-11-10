@@ -137,6 +137,43 @@ export const portfolioItem = defineType({
       ],
     }),
 
+    defineField({
+      name: "videos",
+      title: "Videos",
+      type: "array",
+      group: "media",
+      description:
+        "모션·영상 결과물 · H.264 MP4 권장 (HEVC는 일부 브라우저에서 재생 안 됨) · 커버 아래, 갤러리 위에 노출",
+      of: [
+        {
+          type: "object",
+          name: "videoItem",
+          fields: [
+            defineField({
+              name: "file",
+              type: "file",
+              title: "Video File",
+              options: { accept: "video/mp4" },
+              validation: (R) => R.required(),
+            }),
+            defineField({
+              name: "poster",
+              type: "image",
+              title: "Poster",
+              description: "재생 전 보여줄 정지 화면 (선택)",
+            }),
+            defineField({
+              name: "caption",
+              type: "string",
+              title: "Caption",
+              description: "영상 아래 표시될 짧은 설명 (선택)",
+            }),
+          ],
+          preview: { select: { title: "caption" } },
+        },
+      ],
+    }),
+
     // ── 메타 정보 ──────────────────────────────────────────
     defineField({
       name: "client",
