@@ -49,9 +49,11 @@ export async function HomeArticles({ locale }: { locale: string }) {
           </Link>
         ))}
       </div>
-      <Link href="/content" className="button-outline mt-10">
-        {t("view_all_articles")}
-      </Link>
+      <div className="flex justify-center mt-12">
+        <Link href="/content" className="button-outline">
+          {t("view_all_articles")}
+        </Link>
+      </div>
     </section>
   );
 }
