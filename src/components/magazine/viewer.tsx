@@ -28,8 +28,8 @@ export function MagazineViewer({ seriesLabel, publishedAt, scenes, backLabel }: 
 
   return (
     <article className="max-w-[860px] mx-auto px-[80px] max-md:px-10 py-[120px]">
-      <Link href="/content" className="action-link inline-block mb-16">
-        ← {backLabel}
+      <Link href="/content" className="action-link back inline-block mb-16">
+        {backLabel}
       </Link>
 
       <p className="caption-category mb-4">

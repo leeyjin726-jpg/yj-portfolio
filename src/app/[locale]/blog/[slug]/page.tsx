@@ -71,9 +71,9 @@ async function BlogPostContent({
     <main className="flex-1 max-w-[860px] mx-auto px-[80px] max-md:px-10 py-[120px]">
       <Link
         href="/content"
-        className="action-link inline-block mb-16"
+        className="action-link back inline-block mb-16"
       >
-        ← {t("back")}
+        {t("back")}
       </Link>
 
       <time className="caption-category block mb-4">

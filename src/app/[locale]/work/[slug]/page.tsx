@@ -124,8 +124,8 @@ async function PortfolioDetailContent({
       <main className="flex-1">
         {/* ── Hero ───────────────────────────────────────────── */}
         <section className="max-w-[1200px] mx-auto px-[80px] max-md:px-10 pt-[120px] pb-[80px] text-center">
-          <Link href={backHref} className="action-link mb-12 inline-block">
-            ← {item.category?.toUpperCase()}
+          <Link href={backHref} className="action-link back mb-12 inline-block">
+            {item.category?.toUpperCase()}
           </Link>
 
           <h1 className="display mb-6 text-foreground">
