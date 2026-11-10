@@ -102,8 +102,10 @@ export const portfolioItemsQuery = groq`
 `;
 
 export const featuredPortfolioQuery = groq`
-  *[_type == "portfolioItem"] | order(displayOrder asc)[0..3] {
+  *[_type == "portfolioItem"] | order(_createdAt desc) {
     _id,
+    _createdAt,
+    year,
     title,
     slug,
     description,

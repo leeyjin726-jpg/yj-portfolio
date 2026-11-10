@@ -167,6 +167,9 @@ async function PortfolioDetailContent({
           )}
         </section>
 
+        {/* ── Videos (above cover so motion work is seen first) ── */}
+        {item.videos?.length > 0 && <CaseStudyVideos videos={item.videos} />}
+
         {/* ── Cover Image ────────────────────────────────────── */}
         {item.coverImage?.asset?.url && (
           <div className="max-w-[1200px] mx-auto px-[80px] max-md:px-10 mb-[80px]">
@@ -189,9 +192,6 @@ async function PortfolioDetailContent({
             </div>
           </div>
         )}
-
-        {/* ── Videos ─────────────────────────────────────────── */}
-        {item.videos?.length > 0 && <CaseStudyVideos videos={item.videos} />}
 
         {/* ── Gallery Images ─────────────────────────────────── */}
         {/* Rows are laid out by native aspect ratio: portrait images

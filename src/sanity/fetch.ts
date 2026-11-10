@@ -1,3 +1,4 @@
+import { sortByRecency } from "@/lib/portfolio-recency";
 // Cached Sanity fetch helpers using Next.js 16 'use cache' directive + cacheTag()
 // Errors are caught internally so failed fetches return null/[] instead of throwing.
 // This prevents Next.js from treating failed cache entries as "uncached data".
@@ -95,7 +96,7 @@ export async function getFeaturedPortfolio() {
   "use cache";
   cacheTag("portfolio");
   try {
-    return await client.fetch(featuredPortfolioQuery);
+    return sortByRecency(await client.fetch(featuredPortfolioQuery));
   } catch {
     return [];
   }

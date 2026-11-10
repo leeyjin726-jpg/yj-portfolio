@@ -237,6 +237,11 @@ async function HomeContent({
                 </Link>
               ))}
             </div>
+            <div className="flex justify-center mt-12">
+              <Link href="/work/design" className="button-outline">
+                {t("view_more_work")}
+              </Link>
+            </div>
           </section>
         )}
 
