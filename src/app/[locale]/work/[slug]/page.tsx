@@ -215,7 +215,7 @@ async function PortfolioDetailContent({
                   <div className="pt-1">
                     <p className="section-label text-faint">{section.label}</p>
                   </div>
-                  <div className="prose prose-invert max-w-none">
+                  <div className="prose prose-invert max-w-none break-keep">
                     <PortableText
                       value={content}
                       components={portableTextComponents}
