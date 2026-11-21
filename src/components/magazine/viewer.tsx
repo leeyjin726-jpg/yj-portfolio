@@ -1,10 +1,12 @@
 import { Link } from "@/i18n/navigation";
+import { SceneImage, type SceneImageData } from "./scene-image";
 
 type Scene = {
   _key?: string;
   title?: string;
   subtitle?: string;
   body?: string;
+  image?: SceneImageData | null;
 };
 
 type Props = {
@@ -55,6 +57,12 @@ export function MagazineViewer({ seriesLabel, publishedAt, scenes, backLabel }: 
         </p>
       )}
 
+      {hero?.image?.asset?.url && (
+        <div className="mb-12">
+          <SceneImage image={hero.image} />
+        </div>
+      )}
+
       <div className="divider-marker mb-16">
         <span className="line" />
         <span className="tick" />
@@ -84,6 +92,8 @@ export function MagazineViewer({ seriesLabel, publishedAt, scenes, backLabel }: 
               {scene.body}
             </p>
           )}
+
+          <SceneImage image={scene.image} />
         </section>
       ))}
     </article>

@@ -167,7 +167,10 @@ export const magazineBySlugQuery = groq`
     publishedAt,
     coverImage,
     description,
-    scenes
+    scenes[]{
+      ...,
+      image{ alt, caption, asset->{ url, metadata{ dimensions } } }
+    }
   }
 `;
 

@@ -129,6 +129,17 @@ export const magazine = defineType({
               rows: 5,
             }),
             defineField({
+              name: "image",
+              type: "image",
+              title: "Image",
+              description: "본문 아래에 노출되는 이미지 · 선택",
+              options: { hotspot: true },
+              fields: [
+                defineField({ name: "alt", type: "string", title: "Alt Text" }),
+                defineField({ name: "caption", type: "string", title: "Caption" }),
+              ],
+            }),
+            defineField({
               name: "tone",
               type: "string",
               title: "Tone (씬 컬러)",
