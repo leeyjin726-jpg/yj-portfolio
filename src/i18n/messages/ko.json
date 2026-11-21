@@ -56,6 +56,8 @@
   "common": {
     "read_more": "더 보기",
     "view_project": "프로젝트 보기",
+    "more_articles": "다른 글",
+    "view_all_articles": "아티클 전체 보기",
     "back": "뒤로",
     "all": "전체",
     "loading": "로딩 중...",

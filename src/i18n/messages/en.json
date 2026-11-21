@@ -56,6 +56,8 @@
   "common": {
     "read_more": "Read more",
     "view_project": "View project",
+    "more_articles": "More articles",
+    "view_all_articles": "View all articles",
     "back": "Back",
     "all": "All",
     "loading": "Loading...",

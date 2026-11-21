@@ -161,6 +161,7 @@ export const magazinesQuery = groq`
 export const magazineBySlugQuery = groq`
   *[_type == "magazine" && slug.current == $slug][0] {
     _id,
+    _updatedAt,
     title,
     "slug": slug.current,
     seriesLabel,
