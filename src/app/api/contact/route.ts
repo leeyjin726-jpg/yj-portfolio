@@ -43,13 +43,20 @@ export async function POST(request: NextRequest) {
   const toEmail = process.env.CONTACT_EMAIL ?? process.env.RESEND_FROM_EMAIL ?? "hello@example.com";
 
   try {
-    await resend.emails.send({
+    // Resend SDK v6 reports API failures via `error` instead of throwing,
+    // so it must be checked or rejected sends look like successes.
+    const { error } = await resend.emails.send({
       from: `TTIYONG.ART <${process.env.RESEND_FROM_EMAIL ?? "onboarding@resend.dev"}>`,
       to: toEmail,
       replyTo: email,
       subject: `[Portfolio] ${type ? `[${type}] ` : ""}${name}님의 문의`,
       text: `이름: ${name}\n이메일: ${email}\n문의유형: ${type ?? "기타"}\n\n${message}`,
     });
+
+    if (error) {
+      console.error("Resend rejected message:", error);
+      return NextResponse.json({ error: "Failed to send message" }, { status: 502 });
+    }
 
     return NextResponse.json({ success: true });
   } catch (error) {
