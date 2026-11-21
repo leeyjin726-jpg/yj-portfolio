@@ -201,18 +201,6 @@ async function PortfolioDetailContent({
           <CaseStudyGallery images={item.galleryImages} />
         )}
 
-        {/* ── Divider ────────────────────────────────────────── */}
-        {hasCaseStudy && (
-          <div className="max-w-[1200px] mx-auto px-[80px] max-md:px-10 mb-[80px]">
-            <div className="divider-marker">
-              <span className="line" />
-              <span className="tick" />
-              <span className="dot" />
-              <span className="line" />
-            </div>
-          </div>
-        )}
-
         {/* ── Case Study Sections (Pattern B 2-column) ───────── */}
         {hasCaseStudy && (
           <div className="max-w-[1200px] mx-auto px-[80px] max-md:px-10 pb-[120px]">
