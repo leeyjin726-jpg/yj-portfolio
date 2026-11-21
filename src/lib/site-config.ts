@@ -21,9 +21,9 @@ export const PERSON = {
 
 export const SEO_COPY: Record<"ko" | "en", { title: string; description: string }> = {
   ko: {
-    title: "이용진 · 브랜드 디자이너 & 에디터 | TTIYONG.ART",
+    title: "띠용아트 TTIYONG.ART | 이용진 · 브랜드 디자이너 & 에디터",
     description:
-      "브랜드의 본질을 읽고 시각으로 설계하는 글 쓰는 디자이너 이용진의 포트폴리오. 로고·BI 디자인, 브랜드 빌딩, AI를 활용한 콘텐츠 제작, 에디토리얼 작업. 프리랜서 프로젝트 의뢰와 협업 제안을 받고 있습니다.",
+      "띠용아트(TTIYONG.ART)는 브랜드의 본질을 읽고 시각으로 설계하는 글 쓰는 디자이너 이용진의 포트폴리오입니다. 로고·BI 디자인, 브랜드 빌딩, AI를 활용한 콘텐츠 제작, 에디토리얼 작업. 프리랜서 프로젝트 의뢰와 협업 제안을 받고 있습니다.",
   },
   en: {
     title: "Yongjin Lee · Brand Designer & Editor | TTIYONG.ART",

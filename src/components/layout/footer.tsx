@@ -24,7 +24,7 @@ export function Footer({ socialLinks }: FooterProps) {
       <div className="max-w-[1280px] mx-auto px-[80px] max-md:px-10 py-8">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <p className="section-label text-faint">
-            © {year} TTIYONG.ART · {t("rights")}
+            © {year} {t("brand")} · {t("rights")}
           </p>
 
           <div className="flex flex-wrap items-center gap-5">
