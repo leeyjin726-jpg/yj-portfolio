@@ -1,7 +1,9 @@
+import { Suspense } from "react";
 import { cacheLife, cacheTag } from "next/cache";
 import { NextIntlClientProvider } from "@/components/intl-provider";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { VisitTracker } from "@/components/analytics/visit-tracker";
 
 async function loadMessages(locale: string) {
   "use cache";
@@ -39,6 +41,9 @@ export default async function LocaleLayout({
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
       {children}
+      <Suspense fallback={null}>
+        <VisitTracker />
+      </Suspense>
     </NextIntlClientProvider>
   );
 }
